@@ -22,13 +22,44 @@
   function dataCallback(data, tabletop) {
     console.log(data);
 
-    data.forEach(function(building) {
-      geocoder.geocode({
-        address: building.address1 + ' Denver'
-      }, function(locs) {
-        addMarker(locs[0]);
-      })
-    })
+    var i = 0,
+        locations = [],
+        subsetSize = 1,
+        delay = 1000,
+        failed = 0;
+
+    // Work with Google's 10 requests per second rate limit
+    var interval = setInterval(function(){
+      var subset = data.slice(i*subsetSize, (i+1)*subsetSize);
+
+      console.log('i', i)
+      i++;
+
+      subset.forEach(function(building) {
+        geocoder.geocode({
+          address: building.address1 + ' Denver'
+        }, function(locs) {
+          locs && locs[0] && addMarker(locs[0]);
+
+          if (!locs) console.log('failed', failed++)
+
+          Array.prototype.push.apply(locations, locs);
+        });
+      });
+
+      if (i*subsetSize > data.length) {
+        clearInterval(interval);
+        console.log(locations)
+      }
+    }, delay);
+
+    // data.forEach(function(building) {
+    //   geocoder.geocode({
+    //     address: building.address1 + ' Denver'
+    //   }, function(locs) {
+    //     locs && locs[0] && addMarker(locs[0]);
+    //   });
+    // })
   }
 
   Tabletop.init({
