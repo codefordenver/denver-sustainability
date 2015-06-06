@@ -112,3 +112,6 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+
+Cache::config('one day', array('engine' => 'File', 'duration' => '+1 day'));
