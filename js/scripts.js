@@ -22,49 +22,71 @@
   function dataCallback(data, tabletop) {
     console.log(data);
 
+    var workingData = data['All Buildings over 10000 sq ft'].elements;
+    var addressHeader = 'physicaladdress';
+
     var i = 0,
+        offset = 0,
         locations = [],
         subsetSize = 1,
         delay = 1000,
         failed = 0;
 
-    // Work with Google's 10 requests per second rate limit
-    var interval = setInterval(function(){
-      var subset = data.slice(i*subsetSize, (i+1)*subsetSize);
+    var addressList = [];
+    var latList = [];
+    var lngList = [];
 
-      console.log('i', i)
-      i++;
-
-      subset.forEach(function(building) {
-        geocoder.geocode({
-          address: building.address1 + ' Denver'
-        }, function(locs) {
-          locs && locs[0] && addMarker(locs[0]);
-
-          if (!locs) console.log('failed', failed++)
-
-          Array.prototype.push.apply(locations, locs);
-        });
-      });
-
-      if (i*subsetSize > data.length) {
-        clearInterval(interval);
-        console.log(locations)
+    // Work with Google's 5 requests per second rate limit
+    function geoCodeUnknown(i) {
+      if (i >= workingData.length) {
+        return done();
       }
-    }, delay);
 
-    // data.forEach(function(building) {
-    //   geocoder.geocode({
-    //     address: building.address1 + ' Denver'
-    //   }, function(locs) {
-    //     locs && locs[0] && addMarker(locs[0]);
-    //   });
-    // })
+      var building = workingData[i];
+      if (building.googleaddress && building.lat && building.lng) {
+        addressList.push(building.googleaddress);
+        latList.push(building.lat);
+        lngList.push(building.lng);
+
+        console.log(i);
+        i++;
+        return geoCodeUnknown(i);
+      }
+
+      geocoder.geocode({
+        address: building[addressHeader] + ' Denver'
+      }, function(locs) {
+        locs && locs[0] && addMarker(locs[0]);
+
+        if (!locs) console.log('failed', ++failed)
+
+        locations.push(locs ? locs[0] : null); // take first guess
+
+        addressList.push(locs ? locs[0].formatted_address : null);
+        latList.push(locs ? locs[0].geometry.location.lat() : null);
+        lngList.push(locs ? locs[0].geometry.location.lng() : null);
+
+        console.log(i);
+        i++;
+        setTimeout(geoCodeUnknown.bind(this, i), delay);
+      }.bind(this));
+    }
+
+    geoCodeUnknown(0);
+
+    function done() {
+      // In chome dev tools use copy(addressList.join('\n'))
+      // to get a list of address in format to paste in spreadsheet
+      window.addressList = addressList;
+      window.latList = latList;
+      window.lngList = lngList;
+      debugger;
+    }
   }
 
   Tabletop.init({
     key: dataKey,
     callback: dataCallback,
-    simpleSheet: true
+    // simpleSheet: true
   });
 })();
