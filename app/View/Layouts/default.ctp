@@ -14,8 +14,8 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
+$cakeDescription = __d('Denver City Energy', 'Denver City Energy Project');
+$cakeVersion = __d('Denver City Energy', 'Project %s', Configure::version())
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +38,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+			<h1><?php echo $this->Html->link($cakeDescription, 'https://www.denvergov.org/environmentalhealth/EnvironmentalHealth/EnvironmentalQuality/CityEnergyProject/tabid/445424/Default.aspx'); ?></h1>
 		</div>
 		<div id="content">
 
