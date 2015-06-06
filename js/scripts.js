@@ -36,7 +36,7 @@
       position: new google.maps.LatLng(building_data.lat, building_data.lng),
       icon: determineIcon(building_data)
     });
-    console.log(building_data);
+    // console.log(building_data);
     var infowindow = new google.maps.InfoWindow({
       content: "<p>" + "<strong>Property Name: </strong>" + building_data.propertyname + "</p>"
         + "<p>" + "<strong>Address: </strong>" + building_data.address  + "</p>"
@@ -63,7 +63,7 @@
     // var allBuildings = data['All Buildings over 10000 sq ft'].elements;
 
     benchmarked.forEach(function(building) {
-      console.log(building);
+      // console.log(building);
       if (building.lat && building.lng) {
         addMarker(
           {
@@ -73,6 +73,7 @@
             energyStarScore: building.energystarscore,
             energyStarYears: building['energystarcertification-yearscertified'],
             energyUseIntensity: building.weathernormalizedsiteeuikbtuft,
+            propertyname: building.propertyname,
             propertyType: building['primarypropertytype-selfselected'],
             squareFootage: building.grosssquarefootage,
             yearBuilt: building.yearbuilt,
