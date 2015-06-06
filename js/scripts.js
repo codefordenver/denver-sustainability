@@ -5,35 +5,33 @@
       lat: 39.7392,
       lng: -104.9903
     },
-    zoom: 10
+    zoom: 11
   };
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-  var geocoder = new google.maps.Geocoder();
-
   function addMarker(loc) {
     var marker = new google.maps.Marker({
       map: map,
-      position: loc.geometry.location
+      position: new google.maps.LatLng(loc.lat, loc.lng)
     });
   }
 
   function dataCallback(data, tabletop) {
     console.log(data);
 
-    data.forEach(function(building) {
-      geocoder.geocode({
-        address: building.address1 + ' Denver'
-      }, function(locs) {
-        addMarker(locs[0]);
-      })
-    })
+    var benchmarked = data['Benchmarked Buildings'].elements;
+    var allBuildings = data['All Buildings over 10000 sq ft'].elements;
+
+    benchmarked.forEach(function(building) {
+      if (building.lat && building.lng) {
+        addMarker({lat: building.lat, lng: building.lng});
+      }
+    });
   }
 
   Tabletop.init({
     key: dataKey,
-    callback: dataCallback,
-    simpleSheet: true
+    callback: dataCallback
   });
 })();
