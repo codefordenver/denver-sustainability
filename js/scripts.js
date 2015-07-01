@@ -9,10 +9,10 @@
   };
 
   var energyStarLogo = "energy_star_logo_small.png"
-  var starGreen = "http://www.googlemapsmarkers.com/v1/00FF0D/"
+  var starGreen = "green_circle_icon_md_20px.png"
   var starYellow = "http://www.googlemapsmarkers.com/v1/FFF000/"
   var starGrey = "http://www.googlemapsmarkers.com/v1/8A8989/"
-
+  var infowindow_prev;
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   function content(building) {
     {content: building.address1}
@@ -36,22 +36,25 @@
       position: new google.maps.LatLng(building_data.lat, building_data.lng),
       icon: determineIcon(building_data)
     });
-    // console.log(building_data);
+    console.log(building_data);
     var infowindow = new google.maps.InfoWindow({
       content: "<p>" + "<strong>Property Name: </strong>" + building_data.propertyname + "</p>"
-        + "<p>" + "<strong>Address: </strong>" + building_data.address  + "</p>"
-        + "<p>" + "<strong>Energy Star Score: </strong>" + building_data.energyStarScore + "</p>"
-        + "<p>" + "<strong>Energy Star Years: </strong>" + building_data.energyStarYears + "</p>"
-        + "<p>" + "<strong>Energy Use Intensity (kbtu/sq ft): </strong>" + building_data.energyUseIntensity + "</p>"
-        + "<p>" + "<strong>Property Type: </strong>" + building_data.propertyType + "</p>"
-        + "<p>" + "<strong>Gross Square Footage: </strong>" + building_data.squareFootage + "</p>"
-        + "<p>" + "<strong>Year Built: </strong>" + building_data.yearBuilt + "</p>"
-        + "<p>" + "<strong>Building Website: </strong>" + building_data.website + "</p>"
+      + "<p>" + "<strong>Address: </strong>" + building_data.address  + "</p>"
+      + "<p>" + "<strong>Energy Star Score: </strong>" + building_data.energyStarScore + "</p>"
+      + "<p>" + "<strong>Energy Star Years: </strong>" + building_data.energyStarYears + "</p>"
+      + "<p>" + "<strong>Energy Use Intensity (kbtu/sq ft): </strong>" + building_data.energyUseIntensity + "</p>"
+      + "<p>" + "<strong>Property Type: </strong>" + building_data.propertyType + "</p>"
+      + "<p>" + "<strong>Gross Square Footage: </strong>" + building_data.squareFootage + "</p>"
+      + "<p>" + "<strong>Year Built: </strong>" + building_data.yearBuilt + "</p>"
+      + "<p>" + "<strong>Building Website: </strong>" + building_data.website + "</p>"
         // + "<p>" + "<strong>Other Green Certifications / Programs: </strong>" + building_data. + "</p>"
-        + "<p>" + "<strong>Top Energy Efficient Strategies: </strong>" + building_data.energyStrategies + "</p>"
+      + "<p>" + "<strong>Top Energy Efficient Strategies: </strong>" + building_data.energyStrategies + "</p>"
     });
 
     google.maps.event.addListener(marker, 'click', function() {
+      if(infowindow_prev)
+        infowindow_prev.close();
+      infowindow_prev = infowindow;
       infowindow.open(map, marker);
     });
   }
