@@ -1,5 +1,6 @@
 {
   "name": "denver-sustainability",
+  "description": "Promoting building energy efficiency in Denver",
   "version": "0.0.1",
   "main": "server/server.js",
   "scripts": {
@@ -24,5 +25,7 @@
     "type": "",
     "url": ""
   },
-  "description": "dnvr-sust-test"
+  "engines": {
+    "node": "0.12.x"
+  }
 }
