@@ -8,10 +8,10 @@
     zoom: 11
   };
 
-  var energyStarLogo = "energy_star_logo_small.png"
-  var starGreen = "green_circle_icon_md_20px.png"
-  var dotGreen = "green_dot.png"
-  var dotBlue = "measle_blue.png"
+  var energyStarLogo = "img/energy_star_logo_small.png"
+  var starGreen = "img/green_circle_icon_md_20px.png"
+  var dotGreen = "img/green_dot.png"
+  var dotBlue = "img/measle_blue.png"
   var starYellow = "http://www.googlemapsmarkers.com/v1/FFF000/"
   var starGrey = "http://www.googlemapsmarkers.com/v1/8A8989/"
   var infowindow_prev;
@@ -44,7 +44,7 @@
       position: new google.maps.LatLng(building_data.lat, building_data.lng),
       icon: determineIcon(building_data)
     });
-    console.log(building_data);
+    // console.log(building_data);
     var infowindow = new google.maps.InfoWindow({
       content: "<p>" + "<strong>Property Name: </strong>" + building_data.propertyname + "</p>"
       + "<p>" + "<strong>Address: </strong>" + building_data.address  + "</p>"

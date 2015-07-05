@@ -1,27 +1,19 @@
-# User specific & automatically generated files #
-#################################################
-/app/Config/database.php
-/app/tmp
-/lib/Cake/Console/Templates/skel/tmp/
-/plugins
-/vendors
-/build
-/dist
-/tags
-*.mo
-
-# IDE and editor specific files #
-#################################
-/nbproject
-.idea
-
-# OS generated files #
-######################
+*.csv
+*.dat
+*.iml
+*.log
+*.out
+*.pid
+*.seed
+*.sublime-*
+*.swo
+*.swp
+*.tgz
+*.xml
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
+.idea
+.project
+.strong-pm
+coverage
+node_modules
+npm-debug.log
