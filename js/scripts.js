@@ -10,6 +10,8 @@
 
   var energyStarLogo = "energy_star_logo_small.png"
   var starGreen = "green_circle_icon_md_20px.png"
+  var dotGreen = "green_dot.png"
+  var dotBlue = "measle_blue.png"
   var starYellow = "http://www.googlemapsmarkers.com/v1/FFF000/"
   var starGrey = "http://www.googlemapsmarkers.com/v1/8A8989/"
   var infowindow_prev;
@@ -19,12 +21,18 @@
   };
 
   function determineIcon(building) {
-    if(building.energyStarYears.indexOf('2014')){
+    if(building.energyStarYears.indexOf('2014') && building.squareFootage >= 50000){
       return energyStarLogo;
     }
     // else if (!building.energyStarYears.indexOf('2014'))
-    else {
+    else if(building.energyStarYears.indexOf('2014') && building.squareFootage < 50000){
+      return dotBlue;
+    }
+    else if(building.energyStarYears.indexOf(!'2014') && building.squareFootage >= 50000){
       return starGreen;
+    }
+    else    {
+      return dotGreen;
     }
     // else{
     //   return starGrey;
