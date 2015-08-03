@@ -15,7 +15,7 @@
   var starYellow = "http://www.googlemapsmarkers.com/v1/FFF000/"
   var starGrey = "http://www.googlemapsmarkers.com/v1/8A8989/"
   var infowindow_prev;
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  var map = new google.maps.Map(document.getElementById('js-map'), mapOptions);
   function content(building) {
     {content: building.address1}
   };
