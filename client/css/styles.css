@@ -1,0 +1,42 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.sidebar {
+  flex: 1 25%;
+  flex-grow: 1;
+  padding: 10px;
+  min-width: 300px;
+}
+
+.title {
+  text-align: center;
+  margin: 20px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #444;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.description {
+  text-align: justify;
+  margin: 20px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #555;
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.map {
+  flex: 1 75%;
+  flex-grow: 3;
+  min-width: 350px;
+}
