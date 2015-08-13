@@ -7,11 +7,11 @@
     },
     zoom: 11
   };
-
-  var energyStarLogo = "img/energy_star_logo_small.png"
+//Energy Star logo cannot be altered - check guidelines at http://www.energystar.gov/ia/partners/logos/downloads/Using_ES_Mark_v13.pdf?4563-1a77
+  var energyStarLogo = "img/logo_Official_32x33_ENE_crt_c.jpg"
   var starGreen = "img/green_circle_icon_md_20px.png"
   var dotGreen = "img/green_dot.png"
-  var dotBlue = "img/measle_blue.png"
+  var dotBlue = "img/dot_blue_Energy_Star00aeff.png"
   var starYellow = "http://www.googlemapsmarkers.com/v1/FFF000/"
   var starGrey = "http://www.googlemapsmarkers.com/v1/8A8989/"
   var infowindow_prev;
