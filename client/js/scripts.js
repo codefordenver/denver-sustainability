@@ -44,10 +44,11 @@
       position: new google.maps.LatLng(building_data.lat, building_data.lng),
       icon: determineIcon(building_data)
     });
-    // console.log(building_data);
-    var infowindow = new google.maps.InfoWindow({
-      content: "<p>" + "<strong>Property Name: </strong>" + building_data.propertyname + "</p>"
-      + "<p>" + "<strong>Address: </strong>" + building_data.address  + "</p>"
+
+    var html = "<div class='score'  style='float:right;height:80px;width:80px'>"
+      + "<h1>" + building_data.energyStarScore + "</h1></div>"
+      + "<h2>" + building_data.propertyname + "</h2>"
+      + "<h3>" + building_data.address  + "</h3>"
       + "<p>" + "<strong>Energy Star Score: </strong>" + building_data.energyStarScore + "</p>"
       + "<p>" + "<strong>Energy Star Years: </strong>" + building_data.energyStarYears + "</p>"
       + "<p>" + "<strong>Energy Use Intensity (kbtu/sq ft): </strong>" + building_data.energyUseIntensity + "</p>"
@@ -56,7 +57,10 @@
       + "<p>" + "<strong>Year Built: </strong>" + building_data.yearBuilt + "</p>"
       + "<p>" + "<strong>Building Website: </strong>" + building_data.website + "</p>"
         // + "<p>" + "<strong>Other Green Certifications / Programs: </strong>" + building_data. + "</p>"
-      + "<p>" + "<strong>Top Energy Efficient Strategies: </strong>" + building_data.energyStrategies + "</p>"
+      + "<p>" + "<strong>Top Energy Efficient Strategies: </strong>" + building_data.energyStrategies + "</p>";
+
+    var infowindow = new google.maps.InfoWindow({
+      content: html
     });
 
     google.maps.event.addListener(marker, 'click', function() {
