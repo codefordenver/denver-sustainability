@@ -40,3 +40,9 @@ html, body {
   flex-grow: 3;
   min-width: 350px;
 }
+
+.score {
+  float:right;
+  font-size:35px;
+  margin-top: 0px;
+}
