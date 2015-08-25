@@ -14,6 +14,7 @@
          
 	<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/lib/materialize.min.js"></script>
+    <script type="text/javascript" src="js/lib/mustache.min.js"></script>
     <!--CLUSTER CODE <script type="text/javascript" src="js/markerclusterer.min.js"></script>-->
     <script type="text/javascript" src="js/lib/geohash.js"></script>
   
@@ -26,7 +27,18 @@
     
 	<div id="map-canvas"></div>
     
+    <script id="legend_item" type="x-tmpl-mustache">
+    <TABLE style='height:15px;'>
+        <TR>
+            <TD style='text-align:center;width:45px;'>
+                <img src='{{icon}}'/>
+            </TD>
+            <TD>{{label}}</TD>
+        </TR> 
+    </TABLE>
+    </script>
 	<div id="legend"></div>
+      
       <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"
         async defer></script>
       <script src="js/initMap.js"></script>

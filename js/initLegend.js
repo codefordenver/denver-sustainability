@@ -6,24 +6,12 @@ function initLegend(map) {
     var legend = document.getElementById('legend');
     for (i = 0; i < labels.length; i++) {
       var div = document.createElement('div');
-
-      // HTML FOR SINGLE LEGEND ELEMENT
-      div.innerHTML = "<TABLE style='height:15px;'>" 
-                    +   "<TR>"
-                    +			"<TD style='text-align:center;width:45px;'>"
-                    +			"<img src='" 
-                    + 				icons[i] 
-                    + 				"'/>"
-                    +			"</TD>"
-                    +			"<TD>"
-                    + 				labels[i]
-                    +			"</TD>"
-                    +		"</TR>" 
-                    +	"</TABLE>"
-
-      // END LEGEND ELEMENT HTML.
-
+      div.id = "legendItem" + i;
       legend.appendChild(div);
+      var template = $('#legend_item').html();
+      Mustache.parse(template);   // optional, speeds up future uses
+      var rendered = Mustache.render(template, {icon: icons[i], label: labels[i]});  
+      $("#legendItem" + i).html(rendered);
     }
 
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(legend);
