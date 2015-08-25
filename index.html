@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Building an Energy Efficient Denver</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	
+	<link type="text/css" rel="stylesheet" href="styles/main.css" />
+    <link type="text/css" rel="stylesheet" href="styles/lib/materialize.min.css"  media="screen,projection"/>
+ 
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         
+	<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/lib/materialize.min.js"></script>
+    <!--CLUSTER CODE <script type="text/javascript" src="js/markerclusterer.min.js"></script>-->
+    <script type="text/javascript" src="js/lib/geohash.js"></script>
+  
+  </head>
+  
+  <body>
+	<script type="text/javascript" src="js/facebookInit.js"></script>
+  
+  	<input id="search-input" type="text" placeholder="Search Box" />
+    
+	<div id="map-canvas"></div>
+    
+	<div id="legend"></div>
+      <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"
+        async defer></script>
+      <script src="js/initMap.js"></script>
+      <script src="js/initSearchBox.js"></script>
+      <script src="js/initLegend.js"></script>
+      <script src="js/getAndParseBuildings.js"></script>
+      <script>
+			var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
+	  
+			/**CLUSTER CODE**/ //var markerCluster = new MarkerClusterer(map, markers);		
+            
+			// POP UP BOTTOM DRAWER HALF A SECOND AFTER PAGE LOADS.
+            $(document).ready(function(){
+            	 setTimeout(function() { $('#popupModal').openModal({opacity: 0}); }, 500);
+            });
+        </script>
+  <!-- BUBBLE UP BUTTONS IN BOTTOM-RIGHT -->
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large brown modal-trigger" href="#loginModal">
+      <i class="large material-icons">vpn_key</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red modal-trigger"><i class="material-icons">vpn_key</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">add</i></a></li>
+    </ul>
+  </div>
+  <!-- END BUBBLE UP MENU -->
+  
+  <!-- LOGIN MODAL: NOT CURRENTLY IMPLEMENTED
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+		<?php include("html/login.html"); ?>
+	</div>
+  </div>-->
+  <!-- END LOGIN MODAL -->
+  
+  <!-- BOTTOM DRAWER -->
+  <div id="popupModal" class="modal bottom-sheet" style="border-radius:15px;">
+    <div class="modal-content" id="popupModalContent" style="max-width:600px;align:center;">
+      <script>
+        $("#popupModalContent").load("html/bottom_drawer_splash.html");
+      </script>
+    </div>
+  </div>
+  <!-- END BOTTOM DRAWER -->
+          
+  </body>
+</html>
