@@ -9,6 +9,7 @@ function initMap() {
 
     var mapElement = document.getElementById('map-canvas');
     var map = new google.maps.Map(mapElement, mapOptions);
+    google.maps.event.addListener(map, 'click', function() { $("#popupModal").closeModal(c); });
     
     initSearchBox(map);
     initLegend(map);
