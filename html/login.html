@@ -1,0 +1,44 @@
+<h4>Login/Register</h4>
+      <p>You don't need an account to find farmstands, but creating one will allow you to publish or contact farmstands and leave comments/reviews. 
+   <form class="col s12">
+      <div class="row" style="padding-top:0px;margin-top:0px;">
+        <div class="input-field col s12" style="padding-top:0px;margin-top:0px;">
+          <input id="loginEmail" type="email" class="validate" style="padding-bottom:0px;margin-bottom:0px;">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row" style="padding-top:0px;margin-top:0px;">
+        <div class="input-field col s12" style="padding-top:0px;margin-top:0px;">
+          <input id="loginPassword" type="password" class="validate" style="padding-bottom:0px;margin-bottom:0px;">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div id='registerDiv' style='display:none;'>
+	      <div class="row">
+	        <div class="input-field col s12" style='margin-top:0px;'>
+	          <input id="loginConfirmPassword" type="password" class="validate" style="padding-bottom:0px;margin-bottom:0px;">
+	          <label for="loginConfirmPassword">Confirm Password</label>
+	        </div>
+	      </div>   
+	      <TABLE style="padding:0px;margin:0px;"><TR><TD style="padding:0px;margin:0px;">
+	      <div class="row">
+	        <div class="input-field col s12" style='margin-top:0px;padding-top:0px;'>
+	          <input id="loginFirstName" type="text" class="validate">
+	          <label for="loginFirstName">First Name</label>
+	        </div>
+	      </div>
+	      </TD><TD>
+	      <div class="row">
+	        <div class="input-field col s12" style='margin-top:0px;padding-top:0px;'>
+	          <input id="loginLastName" type="text" class="validate">
+	          <label for="loginLastName">Last Name</label>
+	        </div>
+	      </div>
+	      </TD></TR></TABLE>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action" id='loginButton'>
+    		Login <i class="material-icons">vpn_key</i>
+  	  </button>
+    </form>
+      <p id='registerLink'>Don't have an account?  <a href="" onclick="document.getElementById('registerDiv').style.display='inline'; document.getElementById('loginButton').innerHTML='Create Account <i class=\'material-icons\'>perm_identity</i>';document.getElementById('registerLink').style.display='none';return false;">Register now</a></p>
+    
