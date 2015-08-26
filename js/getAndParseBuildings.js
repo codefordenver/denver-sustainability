@@ -47,15 +47,36 @@ function parseBuildings(buildingStr, map) {
                         url: BASE_URL + "details.php",
                         method: "GET",
                         data: { id: a }
-                }).done(function(text) {
-
-                    // FILL INFO BOX BASED ON BUILDING DATA (USE TEMPLATE FOR THIS)
-                    loc = currentMarker.getPosition();
-                    $('#modalText').html("Building with address: " + text 
-                        + "<img src='https://maps.googleapis.com/maps/api/streetview?size=800x400&location=" 
-                        + loc.lat() + "," + loc.lng() + "'/>");
-                    });
-
+                    }).done(function(json) {
+                        // FILL TEMPLATE FOR CLICKED BUILDING
+                        var obj = jQuery.parseJSON(json);
+                        var template = $('#building_info').html();
+                        Mustache.parse(template);
+                        var rendered = Mustache.render(template, 
+                            {
+                                name: obj.building_name,
+                                address: obj.building_address,
+                                lat: obj.building_lat,
+                                lng: obj.building_lng,
+                                geocodedAddress: obj.building_geocoded_address,
+                                squareFootage: obj.building_gross_square_footage,
+                                yearBuilt: obj.building_year_built,
+                                website: obj.building_website,
+                                updated: obj.building_updated,
+                                propertyType: obj.building_sector,
+                                sourcePrim: obj.building_source_prim,
+                                numUnits: obj.building_number_units,
+                                geocodedLat: obj.building_geocoded_lat,
+                                geocodedLng: obj.building_geocoded_lng,
+                                building_geohash: obj.building_geohash,
+                                viewCount: obj.building_view_count,
+                                energyStarScore: obj.score_score,
+                                certifications: obj.certifications,
+                                strategies: obj.strategies,
+                                energyUseIntensity: obj.score_wns_eui
+                            });  
+                        $("#popupModalContent").html(rendered);
+                    }); // END TEMPLATE FILL
                 }(this));
             }); // END RESPOND TO MARKER CLICK
         }(hash));
