@@ -12,7 +12,7 @@ Geohashes are a way to succinctly express a location.  Where you might use 16 ch
 
 <P>If you are describing a lot of buildings really close to each other, you can use a compression algorithm to take advantage of this proximity.  The following is the algorithm I used to encode our dataset:</P>
 
-<ol>Sort the geohashes in alphabetical order
+<ol><li>Sort the geohashes in alphabetical order</li>
 <li>Print the first 5 characters of the first geohash</li>
 <li>For each geohash that starts with these 5 letters, print the next three letters in it.</li>
 <li>Our buildings are going to be one of 6 different types, so let's add a number representing the type after each partial hash (this will allow us to display the correct icon).</li>
