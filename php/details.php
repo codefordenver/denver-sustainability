@@ -10,6 +10,9 @@ $result = $db_link->query("SELECT building_name, building_address, building_lat,
 
 if ($row = mysqli_fetch_assoc($result)) {
 	print json_encode($row);
+    
+    $db_link->query("UPDATE buildings SET building_view_count=building_view_count+1 WHERE building_id=$id");
+
 }
 
 ?>
