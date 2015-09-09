@@ -30,7 +30,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 		print '~'.$diffCount;
 		print substr($newPrefix, 5 - $diffCount, $diffCount);
 	}
-	print substr($hash, 5, 3);
+	print substr($hash, 5, 4);
 	print $typeCode;	
 	
 	$lastPrefix = $newPrefix;

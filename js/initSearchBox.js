@@ -17,11 +17,12 @@ function initSearchBox(map) {
 
         map.setZoom(17);
         map.panTo(places[0].geometry.location);
+		
         $('#popupModal').openModal({opacity: 0});
         $.ajax({
             url: BASE_URL + "place_id_details.php",
             method: "GET",
-            data: { id: places[0].id}
+            data: { id: places[0].place_id}
         }).done(function(text) {
             loc = places[0].geometry.location;
             $('#modalText').html("Building with address: " + text 

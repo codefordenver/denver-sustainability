@@ -10,9 +10,9 @@ function parseBuildings(buildingStr, map) {
             currentPrefix = currentPrefix.substring(0, 5 - numDiff) + buildingStr.substring(strIndex + 2, strIndex + 2 + numDiff);
             strIndex += 2 + numDiff;
         }
-        hash = currentPrefix + buildingStr.substring(strIndex, strIndex + 3);
-        typeCode = buildingStr[strIndex + 3];
-        strIndex += 4;
+        hash = currentPrefix + buildingStr.substring(strIndex, strIndex + 4);
+        typeCode = buildingStr[strIndex + 4];
+        strIndex += 5;
 
         // ICON RULES
         if(typeCode == 3 || typeCode == 2){
