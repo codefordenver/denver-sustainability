@@ -15,12 +15,18 @@ function parseBuildings(buildingStr, map) {
         strIndex += 5;
 
         // ICON RULES
-        if(typeCode == 3 || typeCode == 2){
-          nextIcon = 'images/energy_star_logo_small.png';
+        if(typeCode == 0){
+          nextIcon = 'images/icon-circle-grayx7.png';
         } else if (typeCode == 1){
-          nextIcon = 'images/green_circle_icon_md_20px.png';
+          nextIcon = 'images/icon-circle-greenx7.png';
+        } else if (typeCode == 2){
+          nextIcon = 'images/icon-small-blue-square7x7.png';
+        } else if (typeCode == 4){
+          nextIcon = 'images/icon-circle-grayx20.png';
+        } else if (typeCode == 5){
+          nextIcon = 'images/icon-circle-greenx20.png';
         } else {
-          nextIcon = 'images/measle_blue.png';
+          nextIcon = 'images/energy_star_logo_small.png';//'images/measle_blue.png';
         }
         // END ICON RULES
 
