@@ -59,3 +59,50 @@ html, body, #map-canvas {
 #legend img {
 	vertical-align: middle;
 }
+.container  {
+  float:  right !important;
+  border-radius: 10px !important;
+  background-color: black !important;
+  width: 20% !important;
+  margin-right: 51px !important;
+  margin-top: 25px !important;
+  height: 460px !important;
+  padding: 10px !important;
+  display: inline-block !important;
+  color: #fff !important;
+    line-height: 8px !important;
+    opacity: .8; !important;
+    }
+h2 {
+      font-size: 24px !important;
+    }
+h3 {
+    font-size: 18px !important;
+    
+}
+h4 {
+    font-size: 14px !important;
+}
+#legend1 #legend2 #legend3 #legend4 #legend5 {
+    display: inline-block;
+    float: left;
+    /*text-align: center;*/
+}
+#legend1 #legend2 #legend3 #legend4 #legend5 p {
+    font-size: 12px !important;
+    float: left !important;
+
+}
+img {
+    display: inline-block;
+    float: left;
+    padding-right: 5px;
+}
+#fill {
+    color: #0059bc !important;
+}
+p {
+    line-height: 15px;
+    margin-top: 0 auto;
+
+}
