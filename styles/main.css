@@ -66,18 +66,19 @@ html, body, #map-canvas {
   width: 20% !important;
   margin-right: 51px !important;
   margin-top: 25px !important;
-  height: 460px !important;
+  height: 525px !important;
   padding: 10px !important;
   display: inline-block !important;
   color: #fff !important;
-    line-height: 8px !important;
-    opacity: .8; !important;
+  line-height: 8px !important;
+  opacity: .8; !important;
     }
 h2 {
       font-size: 24px !important;
     }
 h3 {
     font-size: 18px !important;
+    margin-left: 38px !important;
     
 }
 h4 {
@@ -104,5 +105,16 @@ img {
 p {
     line-height: 15px;
     margin-top: 0 auto;
+    margin-left: 38px;
 
+}
+@media screen and (max-width 900px) {
+    .container {
+    width: 15% !important;
+}
+}
+@media screen and (max-width: 800px) {
+    .container {
+        width:10% !important;
+    }
 }
