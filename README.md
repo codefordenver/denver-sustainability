@@ -24,10 +24,12 @@ Geohashes are a way to succinctly express a location.  Where you might use 16 ch
 A simple MySQL database that contains a row for each building and corresponding rows for certifications and strategies associated with the building.  There is a dump file in the backup_database folder.  You can install the schema and data by using the Import function in your MySQL tool of choice.  There is a file in the php folder called <b>config.php</b> that contains constants for the database host, username, password, and database name.
 
 #####File Structure
-index.html: Has pretty much the entire view (last I checked) in plain HTML and javascript.  Some stuff is broken out into the html and js folders<br>
-backup_database/ : Dump of the mysql database<br>
-html/ : Some of the page content (sometimes using Mustache templates).  For example, bottom_drawer_splash.html is the splash screen that appears in the bottom drawer when you first open the page.<br>
-images/ : The marker images, header images, certification badges, etc.<br>
-js/ : A lot of the mapping and decoding logic is in here.  Third party libs are in the lib folder.<br>
-php/ : Contains files that access database and grab building data.  If you want to do a local install, change the BASE_URL javascript variable in index.html to point to localhost.  Change config.php to match your db params.<br>
-styles/ : CSS for page.  /lib contains third-party libs. <br>
+path | description
+---- | -----------
+index.html | Has pretty much the entire view (last I checked) in plain HTML and javascript.  Some stuff is broken out into the html and js folders
+backup_database/ | Dump of the mysql database
+html/ | Some of the page content (sometimes using Mustache templates).  For example, bottom_drawer_splash.html is the splash screen that appears in the bottom drawer when you first open the page.
+images/ | The marker images, header images, certification badges, etc.
+js/ | A lot of the mapping and decoding logic is in here.  Third party libs are in the lib folder.
+php/ | Contains files that access database and grab building data.  If you want to do a local install, change the BASE_URL javascript variable in index.html to point to localhost.  Change config.php to match your db params.
+styles/ | CSS for page.  /lib contains third-party libs.
