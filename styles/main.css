@@ -71,7 +71,7 @@ html, body, #map-canvas {
   display: inline-block !important;
   color: #fff !important;
   line-height: 8px !important;
-  opacity: .8; !important;
+  opacity: .8 !important;
     }
 h2 {
       font-size: 24px !important;
@@ -117,4 +117,25 @@ p {
     .container {
         width:10% !important;
     }
+}
+#titleBar{
+  background-color: #EAEAEA;
+  width: 100%;
+  height: 62px;
+}
+#titleText{
+  font-size: 35px;
+  padding: 5px;
+  padding-left: 15px;
+  width: 60%;
+  float: left;
+}
+#subtitle{
+  width: 100%;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(33,100,140);
+  padding-left: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
