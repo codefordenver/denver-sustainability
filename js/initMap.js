@@ -8,7 +8,7 @@ function initMap() {
     }; <!-- TO CHANGE STYLE, USE SNAZZY MAPS AND COPY+PASTE ABOVE -->
 
     var mapElement = document.getElementById('map-canvas');
-    var map = new google.maps.Map(mapElement, mapOptions);
+    map = new google.maps.Map(mapElement, mapOptions);
     google.maps.event.addListener(map, 'click', function() { $("#popupModal").closeModal(c); });
     
     initSearchBox(map);
