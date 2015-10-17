@@ -1,8 +1,14 @@
 function initLegend(map) {
     // List of legend labels.
-    labels = new Array('Energy Star Buildings', 'Large buildings', 'Small Buildings');
+    var labels = new Array(
+      {title: 'ENERGY STAR', subtitle: 'certified 2014'},
+      {title: 'Benchmarked', subtitle: 'score measured'},
+      {title: 'Unbenchmarked', subtitle: 'score unknown'}
+     );
     // List of legend icons
-    icons = new Array('images/energy_star_logo_small.png', 'images/icon-circle-greenx20.png', 'images/icon-circle-grayx20.png');
+    var icons = new Array('images/energy_star_logo_small.png', 'images/icon-circle-greenx20.png', 'images/icon-circle-grayx20.png');
+    // List of filter operators
+    var filters = new Array();
     var legend = document.getElementById('legend');
     for (i = 0; i < labels.length; i++) {
       var div = document.createElement('div');
@@ -10,7 +16,7 @@ function initLegend(map) {
       legend.appendChild(div);
       var template = $('#legend_item').html();
       Mustache.parse(template);   // optional, speeds up future uses
-      var rendered = Mustache.render(template, {icon: icons[i], label: labels[i]});  
+      var rendered = Mustache.render(template, {icon: icons[i], title: labels[i].title, subtitle: labels[i].subtitle});  
       $("#legendItem" + i).html(rendered);
     }
 
