@@ -1,9 +1,13 @@
+energyStarBuildings = [];
+grayBuildings = [];
+greenBuildings = [];
 function parseBuildings(buildingStr, map) {    
     /** CLUSTER CODE **/ // markers = new Array();     
                 
     // PARSING CODE
     currentPrefix = '*****';
     strIndex = 0;
+    var tempList = [];
     while (strIndex < buildingStr.length) {
         if (buildingStr[strIndex] == '~') {
             numDiff = parseInt(buildingStr[strIndex + 1]);
@@ -15,12 +19,24 @@ function parseBuildings(buildingStr, map) {
         strIndex += 5;
 
         // ICON RULES
-        if(typeCode == 3 || typeCode == 2){
-          nextIcon = 'images/energy_star_logo_small.png';
+        if(typeCode == 0){
+          nextIcon = 'images/icon-circle-grayx7.png';
+          tempList = grayBuildings;
         } else if (typeCode == 1){
-          nextIcon = 'images/green_circle_icon_md_20px.png';
+          nextIcon = 'images/icon-circle-greenx7.png';
+          tempList = greenBuildings;
+        } else if (typeCode == 2){
+          nextIcon = 'images/icon-small-blue-square7x7.png';
+          tempList = energyStarBuildings;
+        } else if (typeCode == 4){
+          nextIcon = 'images/icon-circle-grayx20.png';
+          tempList = grayBuildings;
+        } else if (typeCode == 5){
+          nextIcon = 'images/icon-circle-greenx20.png';
+          tempList = greenBuildings;
         } else {
-          nextIcon = 'images/measle_blue.png';
+          nextIcon = 'images/energy_star_logo_small.png';
+          tempList = energyStarBuildings;
         }
         // END ICON RULES
 
@@ -31,6 +47,8 @@ function parseBuildings(buildingStr, map) {
             map: map,
             icon: nextIcon
         });
+
+        tempList.push(buildingMarker);
 
         /** CLUSTER CODE **/ //markers.push(buildingMarker);
 
