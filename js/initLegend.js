@@ -4,7 +4,7 @@ function initLegend(map) {
       {title: 'ENERGY STAR', subtitle: 'certified 2014'},
       {title: 'Benchmarked', subtitle: 'score measured'},
       {title: 'Unbenchmarked', subtitle: 'score unknown'}
-     );
+    );
     // List of legend icons
     var icons = new Array('images/energy_star_logo_small.png', 'images/icon-circle-greenx20.png', 'images/icon-circle-grayx20.png');
     // List of filter operators
