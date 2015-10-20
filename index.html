@@ -30,14 +30,16 @@
       
     <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
     <script id="legend_item" type="x-tmpl-mustache">
-    <TABLE style='height:15px;'>
-        <TR>
-            <TD style='text-align:center;width:45px;'>
-                <img src='{{icon}}'/>
-            </TD>
-            <TD><b>{{title}}</b><br>{{subtitle}}</TD>
-        </TR> 
-    </TABLE>
+    <div onclick="{{onclick}}" class="legendRow">
+      <TABLE style='height:15px;'>
+          <TR>
+              <TD style='text-align:center;width:45px;'>
+                  <img src='{{icon}}'/>
+              </TD>
+              <TD><b>{{title}}</b><br>{{subtitle}}</TD>
+          </TR> 
+      </TABLE>
+    </div>
     </script>
     <!-- END LEGEND ITEM TEMPLATE -->
       

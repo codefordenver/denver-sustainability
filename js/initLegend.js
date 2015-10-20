@@ -8,7 +8,7 @@ function initLegend(map) {
     // List of legend icons
     var icons = new Array('images/energy_star_logo_small.png', 'images/icon-circle-greenx20.png', 'images/icon-circle-grayx20.png');
     // List of filter operators
-    var filters = new Array();
+    var filters = new Array('blue', 'green', 'gray');
     var legend = document.getElementById('legend');
     for (i = 0; i < labels.length; i++) {
       var div = document.createElement('div');
@@ -16,14 +16,16 @@ function initLegend(map) {
       legend.appendChild(div);
       var template = $('#legend_item').html();
       Mustache.parse(template);   // optional, speeds up future uses
-      var rendered = Mustache.render(template, {icon: icons[i], title: labels[i].title, subtitle: labels[i].subtitle});  
+      var rendered = Mustache.render(template, {icon: icons[i], title: labels[i].title, 
+        subtitle: labels[i].subtitle, onclick: "filterLegend('"+filters[i]+"');"
+      });  
       $("#legendItem" + i).html(rendered);
     }
 
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(legend);
 }
 
-function filterLegend(buildingColor, map){
+function filterLegend(buildingColor){
   // set buildingColor to '' to restore all markers
   var state = null;
   var markersArray = [];
@@ -34,7 +36,7 @@ function filterLegend(buildingColor, map){
   } else if (buildingColor=='blue'){
     markersArray = grayBuildings.concat(greenBuildings);
   } else {
-    markersArray.concat(greenBuildings).concat(energyStarBuildings).concat(grayBuildings);
+    markersArray = markersArray.concat(greenBuildings).concat(energyStarBuildings).concat(grayBuildings);
     state = map;
   }
   for (var i = 0; i < markersArray.length; i++) {
