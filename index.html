@@ -35,7 +35,6 @@
 
   </div>
 
-
   <input id="search-input" type="text" placeholder="Search Box" />
     
 	<div id="map-canvas"></div>
@@ -43,14 +42,16 @@
       
     <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
     <script id="legend_item" type="x-tmpl-mustache">
-    <TABLE style='height:15px;'>
-        <TR>
-            <TD style='text-align:center;width:45px;'>
-                <img src='{{icon}}'/>
-            </TD>
-            <TD>{{label}}</TD>
-        </TR> 
-    </TABLE>
+    <div onclick="{{onclick}}" class="legendRow">
+      <TABLE style='height:15px;'>
+          <TR>
+              <TD style='text-align:center;width:45px;'>
+                  <img src='{{icon}}'/>
+              </TD>
+              <TD><b>{{title}}</b><br>{{subtitle}}</TD>
+          </TR> 
+      </TABLE>
+    </div>
     </script>
     <!-- END LEGEND ITEM TEMPLATE -->
       
@@ -75,7 +76,7 @@
         </script>
   
   <!-- BUBBLE UP BUTTONS IN BOTTOM-RIGHT -->
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <!-- <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large brown modal-trigger" href="#loginModal">
       <i class="large material-icons">vpn_key</i>
     </a>
@@ -83,7 +84,7 @@
       <li><a class="btn-floating red modal-trigger"><i class="material-icons">vpn_key</i></a></li>
       <li><a class="btn-floating yellow darken-1"><i class="material-icons">add</i></a></li>
     </ul>
-  </div>
+  </div> -->
   <!-- END BUBBLE UP MENU -->
   
       
