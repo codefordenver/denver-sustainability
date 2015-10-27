@@ -17,7 +17,7 @@ function initLegend(map) {
       var template = $('#legend_item').html();
       Mustache.parse(template);   // optional, speeds up future uses
       var rendered = Mustache.render(template, {icon: icons[i], title: labels[i].title, 
-        subtitle: labels[i].subtitle, onclick: "filterLegend('"+filters[i]+"');"
+        subtitle: labels[i].subtitle, onclick: "filterMarkers('"+filters[i]+"');"
       });  
       $("#legendItem" + i).html(rendered);
     }
@@ -25,7 +25,8 @@ function initLegend(map) {
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(legend);
 }
 
-function filterLegend(buildingColor){
+
+function filterMarkers(buildingColor){
   // set buildingColor to '' to restore all markers
   var visibility = false;
   var markersArray = [greenBuildings, grayBuildings, energyStarBuildings];
@@ -33,6 +34,10 @@ function filterLegend(buildingColor){
   function setVisibile(markerArray, visibile){
     if (visibile) {
       var state = map;
+      // if we're setting something visible that is already visible, skip it
+      if (markerArray[0].getMap() !== null){
+        return;
+      }
     } else {
       var state = null;
     }
@@ -43,15 +48,16 @@ function filterLegend(buildingColor){
   }
 
   if (buildingColor=='green') {
-    markersArray.splice(0,1)
+    // remove green marker array and set it visible, remaining arrays are set not visible
+    setVisibile(markersArray.splice(0,1)[0], true);
   } else if (buildingColor=='gray'){
-    markersArray.splice(1,1)
+    setVisibile(markersArray.splice(1,1)[0], true);
   } else if (buildingColor=='blue'){
-    markersArray.splice(2,1)
+    setVisibile(markersArray.splice(2,1)[0], true);
   } else {
     markersArray.forEach(function(array, index){
       if (array[0].getMap() !== null){
-        markersArray.splice(index,1)
+        markersArray.splice(index,1)[0];
       }
     });
     visibility = true;
