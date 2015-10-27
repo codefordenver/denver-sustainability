@@ -44,12 +44,38 @@ html, body, #map-canvas {
 #legend {
 	font-family: Arial, sans-serif;
 	background: #fff;
-	padding: 10px;
+	/*padding: 10px;*/
 	margin: 10px;
-	background-color: #666666;
+	background-color: #000;
 	color:white;
-	opacity:60%;
+	opacity:0.9;
 	border-radius:15px;
+}
+#legendItem0, #legendItem1, #legendItem2 {
+  font-family: Arial, sans-serif;
+  background: #fff;
+/*  padding: 10px;
+  margin: 10px;*/
+  background-color: #000;
+  color:white;
+/*  opacity:0.7;
+*/  border-radius:15px;
+  padding-right:7px;
+  margin-bottom:-21px;
+}
+#legendItem0:hover, #legendItem1:hover, #legendItem2:hover {
+  background-color: #666666;
+  padding-right:7px;
+}
+#legend::after { 
+  background-image: url(/images/small-check.png);
+    content:  "* Buildings less than 50,000 square feet are denoted by small icons.";
+  float: left;
+  display:block;
+  max-width: 135px;
+  display: block;
+  padding: 15px;
+  text-align: justify;
 }
  
 #legend h3 {
@@ -84,17 +110,17 @@ h3 {
 h4 {
     font-size: 14px !important;
 }
-#legend1 #legend2 #legend3 #legend4 #legend5 {
+/*#legend1 #legend2 #legend3 #legend4 #legend5 {
     display: inline-block;
     float: left;
     /*text-align: center;*/
-}
+/*}
 #legend1 #legend2 #legend3 #legend4 #legend5 p {
     font-size: 12px !important;
     float: left !important;
 
-}
-img {
+}*/
+/*img {
     display: inline-block;
     float: left;
     padding-right: 5px;
@@ -102,8 +128,8 @@ img {
 #fill {
     color: #0059bc !important;
 }
-p {
-    line-height: 15px;
+p {*/
+    /*ine-height: 15px;
     margin-top: 0 auto;
     margin-left: 38px;
 
@@ -112,9 +138,10 @@ p {
     .container {
     width: 15% !important;
 }
-}
-@media screen and (max-width: 800px) {
+}*/
+/*@media screen and (max-width: 800px) {
     .container {
         width:10% !important;
     }
-}
+}*/
+TD
