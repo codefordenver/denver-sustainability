@@ -3,12 +3,14 @@ function initLegend(map) {
     var labels = new Array(
       {title: 'ENERGY STAR', subtitle: 'certified 2014'},
       {title: 'Benchmarked', subtitle: 'score measured'},
-      {title: 'Unbenchmarked', subtitle: 'score unknown'}
+      {title: 'Unbenchmarked', subtitle: 'score unknown'},
+      {title: 'Reset visible', subtitle: 'show all buildings'}
     );
     // List of legend icons
-    var icons = new Array('images/energy_star_logo_small.png', 'images/icon-circle-greenx20.png', 'images/icon-circle-grayx20.png');
+    var icons = new Array('images/energy_star_logo_small.png', 'images/icon-circle-greenx20.png', 
+      'images/icon-circle-grayx20.png', 'images/small-check.png');
     // List of filter operators
-    var filters = new Array('blue', 'green', 'gray');
+    var filters = new Array('blue', 'green', 'gray', '');
     var legend = document.getElementById('legend');
     for (i = 0; i < labels.length; i++) {
       var div = document.createElement('div');
