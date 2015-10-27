@@ -75,7 +75,7 @@ html, body, #map-canvas {
   max-width: 135px;
   display: block;
   padding: 15px;
-  text-align: justify;
+  text-align: justify;		
 }
  
 #legend h3 {
