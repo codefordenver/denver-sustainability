@@ -27,19 +27,36 @@ function initLegend(map) {
 
 function filterLegend(buildingColor){
   // set buildingColor to '' to restore all markers
-  var state = null;
-  var markersArray = [];
+  var visibility = false;
+  var markersArray = [greenBuildings, grayBuildings, energyStarBuildings];
+
+  function setVisibile(markerArray, visibile){
+    if (visibile) {
+      var state = map;
+    } else {
+      var state = null;
+    }
+
+    markerArray.forEach(function(point){
+      point.setMap(state);
+    });
+  }
+
   if (buildingColor=='green') {
-    markersArray = grayBuildings.concat(energyStarBuildings);
+    markersArray.splice(0,1)
   } else if (buildingColor=='gray'){
-    markersArray = greenBuildings.concat(energyStarBuildings);
+    markersArray.splice(1,1)
   } else if (buildingColor=='blue'){
-    markersArray = grayBuildings.concat(greenBuildings);
+    markersArray.splice(2,1)
   } else {
-    markersArray = markersArray.concat(greenBuildings).concat(energyStarBuildings).concat(grayBuildings);
-    state = map;
+    markersArray.forEach(function(array, index){
+      if (array[0].getMap() !== null){
+        markersArray.splice(index,1)
+      }
+    });
+    visibility = true;
   }
   for (var i = 0; i < markersArray.length; i++) {
-    markersArray[i].setMap(state);
+    setVisibile(markersArray[i], visibility);
   }
 }
