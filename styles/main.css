@@ -40,16 +40,36 @@ html, body, #map-canvas {
   font-size: 13px;
   font-weight: 300;
 }
+      
+#legend {   
+  font-family: Arial, sans-serif;   
+  background: #fff;   
+  /*padding: 10px;*/    
+  margin: 10px;   
+  background-color: #000;   
+  color:white;    
+  opacity:0.9;    
+  border-radius:15px;   
+}
 
-#legend {
-	font-family: Arial, sans-serif;
-	background: #fff;
-	padding: 10px;
-	margin: 10px;
-	background-color: #666666;
-	color:white;
-	opacity:60%;
-	border-radius:15px;
+#legend::after {      
+  content:  "* Buildings less than 50,000 square feet are denoted by small icons.";   
+  float: left;    
+  display:block;    
+  max-width: 135px;   
+  display: block;   
+  padding: 15px;    
+  text-align: justify;    
+}
+
+.legendRow {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.legendRow:hover {
+  background-color: #666666;
+  border-radius:15px; 
 }
  
 #legend h3 {
@@ -59,7 +79,8 @@ html, body, #map-canvas {
 #legend img {
 	vertical-align: middle;
 }
-.container  {
+
+.container {
   float:  right !important;
   border-radius: 10px !important;
   background-color: black !important;
@@ -72,57 +93,65 @@ html, body, #map-canvas {
   color: #fff !important;
   line-height: 8px !important;
   opacity: .8 !important;
-    }
+}
+
 h2 {
-      font-size: 24px !important;
-    }
+  font-size: 24px !important;
+}
+
 h3 {
-    font-size: 18px !important;
-    margin-left: 38px !important;
-    
+  font-size: 18px !important;
+  margin-left: 38px !important;
 }
+
 h4 {
-    font-size: 14px !important;
+  font-size: 14px !important;
 }
-#legend1 #legend2 #legend3 #legend4 #legend5 {
+
+/*#legend1 #legend2 #legend3 #legend4 #legend5 {
     display: inline-block;
     float: left;
-    /*text-align: center;*/
+    text-align: center;
 }
 #legend1 #legend2 #legend3 #legend4 #legend5 p {
     font-size: 12px !important;
     float: left !important;
+}*/
 
-}
 img {
-    display: inline-block;
-    float: left;
-    padding-right: 5px;
+  display: inline-block;
+  float: left;
+  padding-right: 5px;
 }
-#fill {
-    color: #0059bc !important;
-}
-p {
-    line-height: 15px;
-    margin-top: 0 auto;
-    margin-left: 38px;
 
+#fill {
+  color: #0059bc !important;
 }
+
+p {
+  line-height: 15px;
+  margin-top: 0 auto;
+  margin-left: 38px;
+}
+
 @media screen and (max-width 900px) {
-    .container {
+  .container {
     width: 15% !important;
+  }
 }
-}
+
 @media screen and (max-width: 800px) {
-    .container {
-        width:10% !important;
-    }
+  .container {
+    width:10% !important;
+  }
 }
+
 #titleBar{
   background-color: #EAEAEA;
   width: 100%;
   height: 62px;
 }
+
 #titleText{
   font-size: 35px;
   padding: 5px;
@@ -130,6 +159,7 @@ p {
   width: 60%;
   float: left;
 }
+
 #subtitle{
   width: 100%;
   font-size: 16px;
