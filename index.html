@@ -3,16 +3,16 @@
   <head>
     <title>Building an Energy Efficient Denver</title>
     
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	
-  	<link type="text/css" rel="stylesheet" href="styles/main.css" />
+  
+    <link type="text/css" rel="stylesheet" href="styles/main.css" />
     <link type="text/css" rel="stylesheet" href="styles/lib/materialize.min.css"  media="screen,projection"/>
  
-  	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
          
-  	<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/lib/materialize.min.js"></script>
     <script type="text/javascript" src="js/lib/mustache.min.js"></script>
     <!--CLUSTER CODE <script type="text/javascript" src="js/markerclusterer.min.js"></script>-->
@@ -20,7 +20,7 @@
   </head>
   
   <body>
-  	<script type="text/javascript" src="js/facebookInit.js"></script>
+    <script type="text/javascript" src="js/facebookInit.js"></script>
     
     <div id="header">
       <div id="titleBar">
@@ -35,7 +35,7 @@
 
     <input id="search-input" type="text" placeholder="Search Box" />
       
-  	<div id="map-canvas"></div>  
+    <div id="map-canvas"></div>  
         
     <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
     <script id="legend_item" type="x-tmpl-mustache">
@@ -51,8 +51,8 @@
       </div>
     </script>
     <!-- END LEGEND ITEM TEMPLATE -->
-        
-  	<div id="legend"></div>
+    
+    <div id="legend"></div>
 
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"
       async defer></script>
@@ -62,13 +62,13 @@
     <script src="js/getAndParseBuildings.js"></script>
 
     <script>
-			var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
-	  
-			/**CLUSTER CODE**/ //var markerCluster = new MarkerClusterer(map, markers);		
+      var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
+    
+      /**CLUSTER CODE**/ //var markerCluster = new MarkerClusterer(map, markers);   
             
-			// POP UP BOTTOM DRAWER HALF A SECOND AFTER PAGE LOADS.
+      // POP UP BOTTOM DRAWER HALF A SECOND AFTER PAGE LOADS.
       $(document).ready(function(){
-    	  setTimeout(function() { $('#popupModal').openModal({opacity: 0}); }, 500);
+        setTimeout(function() { $('#popupModal').openModal({opacity: 0}); }, 500);
       });
     </script>
     
@@ -89,8 +89,8 @@
     <div id="loginModal" class="modal">
       <div class="modal-content" id="loginModalContent">
           $("#loginModalContent").load("html/login.html");
-  		<?php include("html/login.html"); ?>
-  	</div>
+      <?php include("html/login.html"); ?>
+    </div>
     </div>-->
     <!-- END LOGIN MODAL -->
     
@@ -125,7 +125,6 @@
         </script>
       </div>
     </div>
-    <!-- END BOTTOM DRAWER -->
-            
+    <!-- END BOTTOM DRAWER -->   
   </body>
 </html>
