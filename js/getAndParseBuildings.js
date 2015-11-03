@@ -20,8 +20,7 @@ function parseBuildings(buildingStr, map) {
 
         // ICON RULES
         if(typeCode == 0){
-          nextIcon = 'images/icon-circle-grayx7.png';
-          tempList = grayBuildings;
+          continue;  // we don't need to show buildings of this type anymore
         } else if (typeCode == 1){
           nextIcon = 'images/icon-circle-greenx7.png';
           tempList = greenBuildings;
