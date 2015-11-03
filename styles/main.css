@@ -81,31 +81,31 @@ html, body, #map-canvas {
 }
 
 .container {
-  float:  right !important;
-  border-radius: 10px !important;
-  background-color: black !important;
-  width: 20% !important;
-  margin-right: 51px !important;
-  margin-top: 25px !important;
-  height: 525px !important;
-  padding: 10px !important;
-  display: inline-block !important;
-  color: #fff !important;
-  line-height: 8px !important;
-  opacity: .8 !important;
+  float:  right;
+  border-radius: 10px;
+  background-color: black;
+  width: 20%;
+  margin-right: 51px;
+  margin-top: 25px;
+  height: 525px;
+  padding: 10px;
+  display: inline-block;
+  color: #fff;
+  line-height: 8px;
+  opacity: .8;
 }
 
 h2 {
-  font-size: 24px !important;
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 18px !important;
-  margin-left: 38px !important;
+  font-size: 18px;
+  margin-left: 38px;
 }
 
 h4 {
-  font-size: 14px !important;
+  font-size: 14px;
 }
 
 /*#legend1 #legend2 #legend3 #legend4 #legend5 {
@@ -114,8 +114,8 @@ h4 {
     text-align: center;
 }
 #legend1 #legend2 #legend3 #legend4 #legend5 p {
-    font-size: 12px !important;
-    float: left !important;
+    font-size: 12px;
+    float: left;
 }*/
 
 img {
@@ -125,7 +125,7 @@ img {
 }
 
 #fill {
-  color: #0059bc !important;
+  color: #0059bc;
 }
 
 p {
@@ -136,13 +136,13 @@ p {
 
 @media screen and (max-width 900px) {
   .container {
-    width: 15% !important;
+    width: 15%;
   }
 }
 
 @media screen and (max-width: 800px) {
   .container {
-    width:10% !important;
+    width:10%;
   }
 }
 
