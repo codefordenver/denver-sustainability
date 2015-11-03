@@ -3,134 +3,129 @@
   <head>
     <title>Building an Energy Efficient Denver</title>
     
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	
-	<link type="text/css" rel="stylesheet" href="styles/main.css" />
+  	<link type="text/css" rel="stylesheet" href="styles/main.css" />
     <link type="text/css" rel="stylesheet" href="styles/lib/materialize.min.css"  media="screen,projection"/>
  
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
          
-	<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+  	<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/lib/materialize.min.js"></script>
     <script type="text/javascript" src="js/lib/mustache.min.js"></script>
     <!--CLUSTER CODE <script type="text/javascript" src="js/markerclusterer.min.js"></script>-->
     <script type="text/javascript" src="js/lib/geohash.js"></script>
-  
   </head>
   
   <body>
-	<script type="text/javascript" src="js/facebookInit.js"></script>
-  
-  <div id="header">
-    <div id="titleBar">
-      <div id="titleText">Building an Energy Efficient Denver</div>
-      <img src="images/city_energy_logo.png" width="200px" style="float:right;padding-top: 4px;">
-    </div>
-    <div id="subtitle">
-      You know the miles per gallon of your car, but do you know the 1-100 ENERGY STAR score of the buildings where you 
-      live and work?
+  	<script type="text/javascript" src="js/facebookInit.js"></script>
+    
+    <div id="header">
+      <div id="titleBar">
+        <div id="titleText">Building an Energy Efficient Denver</div>
+        <img src="images/city_energy_logo.png" width="200px" style="float:right;padding-top: 4px;">
+      </div>
+      <div id="subtitle">
+        You know the miles per gallon of your car, but do you know the 1-100 ENERGY STAR score of the buildings where you 
+        live and work?
+      </div>
     </div>
 
-  </div>
-
-  <input id="search-input" type="text" placeholder="Search Box" />
-    
-	<div id="map-canvas"></div>
-    
+    <input id="search-input" type="text" placeholder="Search Box" />
       
+  	<div id="map-canvas"></div>  
+        
     <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
     <script id="legend_item" type="x-tmpl-mustache">
-    <div onclick="{{onclick}}" class="legendRow">
-      <TABLE style='height:15px;'>
+      <div onclick="{{onclick}}" class="legendRow">
+        <TABLE style='height:15px;'>
           <TR>
-              <TD style='text-align:center;width:45px;'>
-                  <img src='{{icon}}'/>
-              </TD>
-              <TD><b>{{title}}</b><br>{{subtitle}}</TD>
+            <TD style='text-align:center;width:45px;'>
+              <img src='{{icon}}'/>
+            </TD>
+            <TD><b>{{title}}</b><br>{{subtitle}}</TD>
           </TR> 
-      </TABLE>
-    </div>
+        </TABLE>
+      </div>
     </script>
     <!-- END LEGEND ITEM TEMPLATE -->
-      
-	<div id="legend"></div>
-      
-      
-      <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"
-        async defer></script>
-      <script src="js/initMap.js"></script>
-      <script src="js/initSearchBox.js"></script>
-      <script src="js/initLegend.js"></script>
-      <script src="js/getAndParseBuildings.js"></script>
-      <script>
+        
+  	<div id="legend"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"
+      async defer></script>
+    <script src="js/initMap.js"></script>
+    <script src="js/initSearchBox.js"></script>
+    <script src="js/initLegend.js"></script>
+    <script src="js/getAndParseBuildings.js"></script>
+
+    <script>
 			var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
 	  
 			/**CLUSTER CODE**/ //var markerCluster = new MarkerClusterer(map, markers);		
             
 			// POP UP BOTTOM DRAWER HALF A SECOND AFTER PAGE LOADS.
-            $(document).ready(function(){
-            	 setTimeout(function() { $('#popupModal').openModal({opacity: 0}); }, 500);
-            });
-        </script>
-  
-  <!-- BUBBLE UP BUTTONS IN BOTTOM-RIGHT -->
-  <!-- <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large brown modal-trigger" href="#loginModal">
-      <i class="large material-icons">vpn_key</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red modal-trigger"><i class="material-icons">vpn_key</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">add</i></a></li>
-    </ul>
-  </div> -->
-  <!-- END BUBBLE UP MENU -->
-  
-      
-  <!-- LOGIN MODAL: NOT CURRENTLY IMPLEMENTED
-  <div id="loginModal" class="modal">
-    <div class="modal-content" id="loginModalContent">
-        $("#loginModalContent").load("html/login.html");
-		<?php include("html/login.html"); ?>
-	</div>
-  </div>-->
-  <!-- END LOGIN MODAL -->
-  
-      
-  <!-- BOTTOM DRAWER TEMPLATE - This is the form each building will take -->
-  <script id="building_info" type="x-tmpl-mustache">
-    <TABLE style='height:15px;'>
+      $(document).ready(function(){
+    	  setTimeout(function() { $('#popupModal').openModal({opacity: 0}); }, 500);
+      });
+    </script>
+    
+    <!-- BUBBLE UP BUTTONS IN BOTTOM-RIGHT -->
+    <!-- <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+      <a class="btn-floating btn-large brown modal-trigger" href="#loginModal">
+        <i class="large material-icons">vpn_key</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating red modal-trigger"><i class="material-icons">vpn_key</i></a></li>
+        <li><a class="btn-floating yellow darken-1"><i class="material-icons">add</i></a></li>
+      </ul>
+    </div> -->
+    <!-- END BUBBLE UP MENU -->
+    
+        
+    <!-- LOGIN MODAL: NOT CURRENTLY IMPLEMENTED
+    <div id="loginModal" class="modal">
+      <div class="modal-content" id="loginModalContent">
+          $("#loginModalContent").load("html/login.html");
+  		<?php include("html/login.html"); ?>
+  	</div>
+    </div>-->
+    <!-- END LOGIN MODAL -->
+    
+    <!-- BOTTOM DRAWER TEMPLATE - This is the form each building will take -->
+    <script id="building_info" type="x-tmpl-mustache">
+      <TABLE style='height:15px;'>
         <TR>
-            <TD style='vertical-align:top;'>
-                <H5>{{name}}</H5>
-                <H6>{{address}}</H6>
-                <BR><B>Energy Star Score:</B> {{energyStarScore}}
-                <BR><B>Energy Use Intensity (kbtu/sq ft):</B> {{energyUseIntensity}}
-                <BR><B>Property Type:</B> {{sector}}
-                <BR><B>Gross Square Footage:</B> {{squareFootage}}
-                <BR><B>Year Built:</B> {{yearBuilt}}
-                <BR><B>Building Website:</B> <a href='{{website}}'>{{website}}</a>
-                <BR><B>Other Certifications:</B> {{certifications}}
-                <BR><B>Top Energy Efficient Strategies:</B> {{strategies}}
-                <BR><B>Number of Views:</B> {{viewCount}}
-            </TD>
-            <TD><img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' /></TD>
+          <TD style='vertical-align:top;'>
+            <H5>{{name}}</H5>
+            <H6>{{address}}</H6>
+            <BR><B>Energy Star Score:</B> {{energyStarScore}}
+            <BR><B>Energy Use Intensity (kbtu/sq ft):</B> {{energyUseIntensity}}
+            <BR><B>Property Type:</B> {{sector}}
+            <BR><B>Gross Square Footage:</B> {{squareFootage}}
+            <BR><B>Year Built:</B> {{yearBuilt}}
+            <BR><B>Building Website:</B> <a href='{{website}}'>{{website}}</a>
+            <BR><B>Other Certifications:</B> {{certifications}}
+            <BR><B>Top Energy Efficient Strategies:</B> {{strategies}}
+            <BR><B>Number of Views:</B> {{viewCount}}
+          </TD>
+          <TD><img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' /></TD>
         </TR> 
-    </TABLE> 
-  </script>
-  <!-- END BOTTOM DRAWER TEMPLATE -->      
-      
-      
-  <!-- BOTTOM DRAWER -->
-  <div id="popupModal" class="modal bottom-sheet" style="border-radius:15px;">
-    <div class="modal-content" id="popupModalContent">
-      <script>
-        $("#popupModalContent").load("html/bottom_drawer_splash.html");
-      </script>
+      </TABLE> 
+    </script>
+    <!-- END BOTTOM DRAWER TEMPLATE -->      
+        
+    <!-- BOTTOM DRAWER -->
+    <div id="popupModal" class="modal bottom-sheet" style="border-radius:15px;">
+      <div class="modal-content" id="popupModalContent">
+        <script>
+          $("#popupModalContent").load("html/bottom_drawer_splash.html");
+        </script>
+      </div>
     </div>
-  </div>
-  <!-- END BOTTOM DRAWER -->
-          
+    <!-- END BOTTOM DRAWER -->
+            
   </body>
 </html>
