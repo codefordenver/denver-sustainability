@@ -1,6 +1,7 @@
 energyStarBuildings = [];
 grayBuildings = [];
 greenBuildings = [];
+var infowindowPrev;
 function parseBuildings(buildingStr, map) {    
     /** CLUSTER CODE **/ // markers = new Array();     
                 
@@ -57,7 +58,9 @@ function parseBuildings(buildingStr, map) {
             buildingMarker.addListener('click', function() {
                 map.setZoom(17);
                 map.panTo(this.getPosition());
-                $('#popupModal').openModal({opacity: 0});
+                if (infowindowPrev){
+                    infowindowPrev.close();
+                }
                 (function(currentMarker) {
                     // RETRIEVE DATA FROM SERVER.  
                     $.ajax({
@@ -91,8 +94,13 @@ function parseBuildings(buildingStr, map) {
                                 certifications: obj.certifications,
                                 strategies: obj.strategies,
                                 energyUseIntensity: obj.score_wns_eui
-                            });  
-                        $("#popupModalContent").html(rendered);
+                            });
+
+                        var infowindow = new google.maps.InfoWindow({
+                            content: rendered
+                        });
+                        infowindowPrev = infowindow;
+                        infowindow.open(map, currentMarker);
                     }); // END TEMPLATE FILL
                 }(this));
             }); // END RESPOND TO MARKER CLICK
