@@ -51,6 +51,9 @@ html, body, #map-canvas {
   opacity:0.9;    
   border-radius:15px;   
 }
+#legendItem0, #legendItem1, #legendItem2, #legendItem3 {
+  cursor:pointer;
+}
 
 #legend::after {      
   content:  "* Buildings less than 50,000 square feet are denoted by small icons.";   
@@ -133,8 +136,16 @@ p {
   margin-top: 0 auto;
   margin-left: 38px;
 }
+@media screen and (max-width: 930px) {
+   #titleText {
+    font-size: 25px !important;
+  }
+  #subtitle {
+    font-size:14px;
+  }
+}
 
-@media screen and (max-width 900px) {
+@media screen and (max-width: 900px) {
   .container {
     width: 15%;
   }
@@ -168,4 +179,20 @@ p {
   padding-left: 35px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+@media screen and (max-width: 600px) {
+  #titleText {
+    font-size: 20px;
+  }
+  #subtitle {
+    font-size:12px;
+  }
+  div#popupModalContent.modal-content{
+    max-height:2px !important;
+  }
+  #legend {
+    max-height: 248px;
+  }
+  #legend::after {
+    display:none;
 }
