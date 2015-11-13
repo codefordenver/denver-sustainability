@@ -33,12 +33,12 @@
       </div>
     </div>
 
-    <input id="search-input" type="text" placeholder="Search Box" />
+    <input id="search-input" type="text" placeholder="Search Box" style="border-radius:2px"/>
       
     <div id="map-canvas"></div>  
         
     <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
-    <script id="legend_item" type="x-tmpl-mustache">
+    <script id="legend_item" type="x-tmpl-mustache" />
       <div onclick="{{onclick}}" class="legendRow">
         <TABLE style='height:15px;'>
           <TR>
@@ -52,7 +52,7 @@
     </script>
     <!-- END LEGEND ITEM TEMPLATE -->
     
-    <div id="legend"></div>
+    <div id="legend" style="border-radius: 2px;"></div>
 
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"
       async defer></script>
@@ -118,7 +118,7 @@
     <!-- END BOTTOM DRAWER TEMPLATE -->      
         
     <!-- BOTTOM DRAWER -->
-    <div id="popupModal" class="modal bottom-sheet" style="border-radius:15px; height:135px">
+    <div id="popupModal" class="modal bottom-sheet">
       <div class="modal-content" id="popupModalContent">
         <script>
           $("#popupModalContent").load("html/bottom_drawer_splash.html");
