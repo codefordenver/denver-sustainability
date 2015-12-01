@@ -75,7 +75,11 @@
 
     <script>
       var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
-    
+        $(document).ready(function(){
+          $('#close-modal-button').click(function (e) {
+            $('#popupModal').closeModal();
+          });
+      });
     </script>
     
     <!-- BUBBLE UP BUTTONS IN BOTTOM-RIGHT -->
@@ -127,6 +131,7 @@
         
     <!-- BOTTOM DRAWER -->
     <div id="popupModal" class="modal bottom-sheet">
+      <i class="material-icons small right" id="close-modal-button">close</i>
       <div class="modal-content" id="popupModalContent">
         <script>
           $("#popupModalContent").load("html/bottom_drawer_splash.html");
