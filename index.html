@@ -87,12 +87,6 @@
     <script>
       var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
     
-      /**CLUSTER CODE**/ //var markerCluster = new MarkerClusterer(map, markers);   
-            
-      // POP UP BOTTOM DRAWER HALF A SECOND AFTER PAGE LOADS.
-      $(document).ready(function(){
-        setTimeout(function() { $('#popupModal').openModal({opacity: 0}); }, 500);
-      });
     </script>
     
     <!-- BUBBLE UP BUTTONS IN BOTTOM-RIGHT -->
@@ -119,9 +113,8 @@
     
     <!-- BOTTOM DRAWER TEMPLATE - This is the form each building will take -->
     <script id="building_info" type="x-tmpl-mustache">
-        
-        <TR>
-          <TD style='vertical-align:top;'>
+        <div class="row">
+        <div class="col m6">
             <H5>{{name}}</H5>
             <H6>{{address}}</H6>
             <BR><B>Energy Star Score:</B> {{energyStarScore}}
@@ -133,10 +126,13 @@
             <BR><B>Other Certifications:</B> {{certifications}}
             <BR><B>Top Energy Efficient Strategies:</B> {{strategies}}
             <BR><B>Number of Views:</B> {{viewCount}}
-          </TD>
-          <TD><img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' /></TD>
-        </TR> 
-     
+        </div>
+        <div class="col m6">
+            <img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' />    
+        </div>
+      </div>
+      
+       
     </script>
     <!-- END BOTTOM DRAWER TEMPLATE -->      
         
