@@ -38,7 +38,7 @@
     <div id="map-canvas"></div>  
         
     <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
-    <script id="legend_item" type="x-tmpl-mustache" />
+    <script id="legend_item" type="x-tmpl-mustache">
       <div onclick="{{onclick}}" class="legendRow">
         <TABLE style='height:15px;'>
           <TR>
@@ -68,7 +68,13 @@
             
       // POP UP BOTTOM DRAWER HALF A SECOND AFTER PAGE LOADS.
       $(document).ready(function(){
-        setTimeout(function() { $('#popupModal').openModal({opacity: 0}); }, 500);
+        setTimeout(function() {
+          $('#popupModal').openModal({opacity: 0});
+          $('#close-modal-button').click(function (e) {
+            $('#popupModal').closeModal();
+          });
+        }, 500);
+
       });
     </script>
     
@@ -119,6 +125,7 @@
         
     <!-- BOTTOM DRAWER -->
     <div id="popupModal" class="modal bottom-sheet">
+      <i class="material-icons small" id="close-modal-button">close</i>
       <div class="modal-content" id="popupModalContent">
         <script>
           $("#popupModalContent").load("html/bottom_drawer_splash.html");
