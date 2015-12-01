@@ -107,7 +107,9 @@
     <!-- BOTTOM DRAWER TEMPLATE - This is the form each building will take -->
     <script id="building_info" type="x-tmpl-mustache">
         <div class="row">
-        <div class="col m6">
+        <div class="col l4">
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
             <H5>{{name}}</H5>
             <H6>{{address}}</H6>
             <BR><B>Energy Star Score:</B> {{energyStarScore}}
@@ -119,13 +121,15 @@
             <BR><B>Other Certifications:</B> {{certifications}}
             <BR><B>Top Energy Efficient Strategies:</B> {{strategies}}
             <BR><B>Number of Views:</B> {{viewCount}}
+            </div>
+            
+          </div>
+            
         </div>
-        <div class="col m6">
+        <div class="col l7">
             <img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' />    
         </div>
       </div>
-      
-       
     </script>
     <!-- END BOTTOM DRAWER TEMPLATE -->      
         
