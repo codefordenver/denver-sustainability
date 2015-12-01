@@ -40,14 +40,14 @@
     <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
     <script id="legend_item" type="x-tmpl-mustache">
       <div onclick="{{onclick}}" class="legendRow">
-        <TABLE style='height:15px;'>
-          <TR>
-            <TD style='text-align:center;width:45px;'>
+        <table style='height:15px;'>
+          <tr>
+            <td style='text-align:center;width:45px;'>
               <img src='{{icon}}'/>
-            </TD>
-            <TD><b>{{title}}</b><br>{{subtitle}}</TD>
-          </TR> 
-        </TABLE>
+            </td>
+            <td><b>{{title}}</b><br>{{subtitle}}</td>
+          </tr>
+        </table>
       </div>
     </script>
     <!-- END LEGEND ITEM TEMPLATE -->
@@ -102,24 +102,24 @@
     
     <!-- BOTTOM DRAWER TEMPLATE - This is the form each building will take -->
     <script id="building_info" type="x-tmpl-mustache">
-      <TABLE style='height:15px;'>
-        <TR>
-          <TD style='vertical-align:top;'>
-            <H5>{{name}}</H5>
-            <H6>{{address}}</H6>
-            <BR><B>Energy Star Score:</B> {{energyStarScore}}
-            <BR><B>Energy Use Intensity (kbtu/sq ft):</B> {{energyUseIntensity}}
-            <BR><B>Property Type:</B> {{sector}}
-            <BR><B>Gross Square Footage:</B> {{squareFootage}}
-            <BR><B>Year Built:</B> {{yearBuilt}}
-            <BR><B>Building Website:</B> <a href='{{website}}'>{{website}}</a>
-            <BR><B>Other Certifications:</B> {{certifications}}
-            <BR><B>Top Energy Efficient Strategies:</B> {{strategies}}
-            <BR><B>Number of Views:</B> {{viewCount}}
-          </TD>
-          <TD><img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' /></TD>
-        </TR> 
-      </TABLE> 
+      <table style='height:15px;'>
+        <tr>
+          <td style='vertical-align:top;'>
+            <h5>{{name}}</h5>
+            <h6>{{address}}</h6>
+            <br><b>Energy Star Score:</b> {{energyStarScore}}{{^energyStarScore}}No Score{{/energyStarScore}}
+            <br><b>Energy Use Intensity (kbtu/sq ft):</b> {{energyUseIntensity}}{{^energyUseIntensity}}Unknown{{/energyUseIntensity}}
+            <br><b>Property Type:</b> {{sector}}{{^sector}}Unknown{{/sector}}
+            <br><b>Gross Square Footage:</b> {{squareFootage}}{{^squareFootage}}Unknown{{/squareFootage}}
+            <br><b>Year Built:</b> {{yearBuilt}}
+            <br><b>Building Website:</b> {{#website}}<a href='{{website}}'>{{website}}</a>{{/website}}{{^website}}No Website{{/website}}
+            <br><b>Other Certifications:</b> {{certifications}}{{^certifications}}None{{/certifications}}
+            <br><b>Top Energy Efficient Strategies:</b> {{strategies}}{{^strategies}}None{{/strategies}}
+            <br><b>Number of Views:</b> {{viewCount}}{{^viewCount}}0{{/viewCount}}
+          </td>
+          <td><img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' /></td>
+        </tr>
+      </table>
     </script>
     <!-- END BOTTOM DRAWER TEMPLATE -->      
         

@@ -69,6 +69,7 @@ function parseBuildings(buildingStr, map) {
                         var obj = jQuery.parseJSON(json);
                         var template = $('#building_info').html();
                         Mustache.parse(template);
+
                         var rendered = Mustache.render(template, 
                             {
                                 name: obj.building_name,
