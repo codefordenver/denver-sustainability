@@ -4,8 +4,12 @@ html, body, #map-canvas {
 	padding: 0px
 }
 
+/* Close button by Jake Billings jake@jakebillings.com 11/30/2015 */
 #close-modal-button {
+  margin-right: 5px;
+  margin-top: 5px;
   float:right;
+  color:grey;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -14,6 +18,7 @@ html, body, #map-canvas {
   user-select: none;
 }
 #close-modal-button:hover {
+  color:black;
   cursor:pointer;
 }
 
