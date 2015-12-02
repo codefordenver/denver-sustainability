@@ -1,92 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Building an Energy Efficient Denver</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  
-    <link type="text/css" rel="stylesheet" href="styles/main.css" />
-    <link type="text/css" rel="stylesheet" href="styles/lib/materialize.min.css"  media="screen,projection"/>
- 
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-         
-    <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/lib/materialize.min.js"></script>
-    <script type="text/javascript" src="js/lib/mustache.min.js"></script>
-    <!--CLUSTER CODE <script type="text/javascript" src="js/markerclusterer.min.js"></script>-->
-    <script type="text/javascript" src="js/lib/geohash.js"></script>
-  </head>
-  
-  <body>
-    <script type="text/javascript" src="js/facebookInit.js"></script>
-    
-  <div id="header">
-      <nav class="grey lighten-3" role="navigation">
-        <div class="nav-wrapper">
-            <div class="row">
-                <a href="#" class="black-text brand-logo " id="titleText">Building an Energy Efficient Denver</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#"><img src="images/city_energy_logo.png" class="center" width="200px" style="float:right;padding-top: 4px;"></a></li>
-                </ul>
-        <!-- Mobile -->        
-                <ul id="nav-mobile" class="side-nav" style="left: -600px;">
-                     <li><a href="#"><img src="images/city_energy_logo.png" class="center" width="200px" style="float:right;padding-top: 4px;"></a></li>
-                    
-                </ul>      
-        <a href="#" data-activates="nav-mobile" class="black-text button-collapse"><i class="material-icons ">menu</i></a>
-            
+    <head>
+        <title>
+            Building an Energy Efficient Denver
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" href="styles/main.css">
+        <link type="text/css" rel="stylesheet" href="styles/lib/materialize.min.css" media="screen,projection">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js">
+</script>
+        <script type="text/javascript" src="js/lib/materialize.min.js">
+</script>
+        <script type="text/javascript" src="js/lib/mustache.min.js">
+</script><!--CLUSTER CODE <script type="text/javascript" src="js/markerclusterer.min.js"></script>-->
+
+        <script type="text/javascript" src="js/lib/geohash.js">
+</script>
+    </head>
+    <body>
+        <script type="text/javascript" src="js/facebookInit.js">
+</script>
+        <div id="header">
+            <nav class="grey lighten-3" role="navigation">
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <a href="#" class="black-text brand-logo" id="titleText">Building an Energy Efficient Denver</a>
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a href="#"><img src="images/city_energy_logo.png" class="center" width="200px" style="float:right;padding-top: 4px;"></a>
+                            </li>
+                            <li>
+                                <a href="index.html">Map</a>
+                            </li>
+                            <li>
+                                <a href="info.html">About Us</a>
+                            </li>
+                        </ul><!-- Mobile -->
+                        <ul id="nav-mobile" class="side-nav" style="left: -600px;">
+                            <li>
+                                <a href="#"><img src="images/city_energy_logo.png" class="center" width="200px" style="float:right;padding-top: 4px;"></a>
+                            </li>
+                            <li>
+                                <a href="index.html">Map</a>
+                            </li>
+                            <li>
+                                <a href="info.html">About Us</a>
+                            </li>
+                        </ul><a href="#" data-activates="nav-mobile" class="black-text button-collapse"><i class="material-icons">menu</i></a>
+                    </div>
+                </div>
+            </nav>
+            <div id="subtitle">
+                You know the miles per gallon of your car, but do you know the 1-100 ENERGY STAR score of the buildings where you live and work?
             </div>
         </div>
-    </nav>
-    <div id="subtitle">
-  You know the miles per gallon of your car, but do you know the 1-100 ENERGY STAR score of the buildings where you live and work?
-    </div>
- </div>
-     
-    <input id="search-input" type="text" placeholder="Search Box" style="border-radius:2px"/>
-      
-    <div id="map-canvas"></div>
-          
-    <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
-    <script id="legend_item" type="x-tmpl-mustache" />
-      <div onclick="{{onclick}}" class="legendRow">
-        <TABLE style='height:15px;'>
-          <TR>
-            <TD style='text-align:center;width:45px;'>
-              <img src='{{icon}}'/>
-            </TD>
-            <TD><b>{{title}}</b><br>{{subtitle}}</TD>
-          </TR> 
-        </TABLE>
-      </div>
-    </script>
-    <!-- END LEGEND ITEM TEMPLATE -->
-    
-    <div id="legend" style="border-radius: 2px;"></div>
-
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"
-      async defer></script>
-    <script src="js/initMap.js"></script>
-    <script src="js/initSearchBox.js"></script>
-    <script src="js/initLegend.js"></script>
-    <script src="js/getAndParseBuildings.js"></script>
-
-    <script>
-      var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
+        <form>
+            <input id="search-input" type="text" placeholder="Search Box" style="border-radius:2px">
+        </form>
+        <div id="map-canvas"></div><!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
+        <script id="legend_item" type="x-tmpl-mustache">
+        <div onclick="{{onclick}}" class="legendRow">
+            <table style='height:15px;'>
+                <tr>
+                    <td style='text-align:center;width:45px;'>
+                        <img src='{{icon}}'>
+                    </td>
+                    <td>
+                        <b>{{title}}</b><br>
+                        {{subtitle}}
+                    </td>
+                </tr>
+            </table>
+        </div><!-- END LEGEND ITEM TEMPLATE -->
+        <div id="legend" style="border-radius: 2px;"></div><script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;callback=initMap" async="" defer type="text/javascript">
+</script><script src="js/initMap.js" type="text/javascript">
+</script><script src="js/initSearchBox.js" type="text/javascript">
+</script><script src="js/initLegend.js" type="text/javascript">
+</script><script src="js/getAndParseBuildings.js" type="text/javascript">
+</script><script type="text/javascript">
+var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
         $(document).ready(function(){
         setTimeout(function() {
-          $('#popupModal').openModal({opacity: 0});
+          // $('#popupModal').openModal({opacity: 0});
           $('#close-modal-button').click(function (e) {
             $('#popupModal').closeModal();
           });
         }, 500);
-      });
-    </script>
-    
-    <!-- BUBBLE UP BUTTONS IN BOTTOM-RIGHT -->
-    <!-- <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        });
+        </script><!-- BUBBLE UP BUTTONS IN BOTTOM-RIGHT -->
+        <!-- <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
       <a class="btn-floating btn-large brown modal-trigger" href="#loginModal">
         <i class="large material-icons">vpn_key</i>
       </a>
@@ -95,21 +100,18 @@
         <li><a class="btn-floating yellow darken-1"><i class="material-icons">add</i></a></li>
       </ul>
     </div> -->
-    <!-- END BUBBLE UP MENU -->
-    
-        
-    <!-- LOGIN MODAL: NOT CURRENTLY IMPLEMENTED
+        <!-- END BUBBLE UP MENU -->
+        <!-- LOGIN MODAL: NOT CURRENTLY IMPLEMENTED
     <div id="loginModal" class="modal">
       <div class="modal-content" id="loginModalContent">
           $("#loginModalContent").load("html/login.html");
       <?php include("html/login.html"); ?>
     </div>
     </div>-->
-    <!-- END LOGIN MODAL -->
-    
-    <!-- BOTTOM DRAWER TEMPLATE - This is the form each building will take -->
-    <script id="building_info" type="x-tmpl-mustache">
-        <div class="row">
+        <!-- END LOGIN MODAL -->
+        <!-- BOTTOM DRAWER TEMPLATE - This is the form each building will take -->
+        <script id="building_info" type="x-tmpl-mustache">
+<div class="row">
         <div class="col m6">
             <H5>{{name}}</H5>
             <H6>{{address}}</H6>
@@ -126,24 +128,19 @@
         <div class="col m6">
             <img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' />    
         </div>
-      </div>
-      
-       
-    </script>
-    <!-- END BOTTOM DRAWER TEMPLATE -->      
-        
-    <!-- BOTTOM DRAWER -->
-    <div id="popupModal" class="modal bottom-sheet">
-      <i class="material-icons small right" id="close-modal-button">close</i>
-      <div class="modal-content" id="popupModalContent">
-        <script>
-          $("#popupModalContent").load("html/bottom_drawer_splash.html");
-        </script>
-      </div>
-    </div>
-    <!-- END BOTTOM DRAWER -->   
-  </body>
+        </div>
 
-<!-- Need to figure out how to combine this version with the other .min version of the same file-->
-<script src="js/lib/materialize.js"></script>
+
+        </script><!-- END BOTTOM DRAWER TEMPLATE --><!-- BOTTOM DRAWER -->
+        <div id="popupModal" class="modal bottom-sheet">
+            <i class="material-icons small right" id="close-modal-button">close</i>
+            <div class="modal-content" id="popupModalContent">
+                <script type="text/javascript">
+$("#popupModalContent").load("html/bottom_drawer_splash.html");
+                </script>
+            </div>
+        </div><!-- END BOTTOM DRAWER --><!-- Need to figure out how to combine this version with the other .min version of the same file-->
+        <script src="js/lib/materialize.js" type="text/javascript">
+</script>
+    </body>
 </html>
