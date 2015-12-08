@@ -23,8 +23,8 @@ function initLegend(map) {
       });  
       $("#legendItem" + i).html(rendered);
     }
-
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(legend);
+    //control position
+    map.controls[google.maps.ControlPosition.LEFT_TOP].push(legend);
 }
 
 

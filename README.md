@@ -26,7 +26,8 @@ A simple MySQL database that contains a row for each building and corresponding 
 #####File Structure
 path | description
 ---- | -----------
-index.html | Has pretty much the entire view (last I checked) in plain HTML and javascript.  Some stuff is broken out into the html and js folders
+index.html | Has the map view. Here users can see the map and get stats on buildings in Denver.  Some stuff is broken out into the html and js folders
+info.html | Has the about us information.
 backup_database/ | Dump of the mysql database
 html/ | Some of the page content (sometimes using Mustache templates).  For example, bottom_drawer_splash.html is the splash screen that appears in the bottom drawer when you first open the page.
 images/ | The marker images, header images, certification badges, etc.

@@ -4,9 +4,9 @@
     <title>Building an Energy Efficient Denver</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  
     <link type="text/css" rel="stylesheet" href="styles/main.css" />
     <link type="text/css" rel="stylesheet" href="styles/lib/materialize.min.css"  media="screen,projection"/>
  
@@ -22,21 +22,45 @@
   <body>
     <script type="text/javascript" src="js/facebookInit.js"></script>
     
-    <div id="header">
-      <div id="titleBar">
-        <div id="titleText">Building an Energy Efficient Denver</div>
-        <img src="images/city_energy_logo.png" width="200px" style="float:right;padding-top: 4px;">
-      </div>
-      <div id="subtitle">
-        You know the miles per gallon of your car, but do you know the 1-100 ENERGY STAR score of the buildings where you 
-        live and work?
-      </div>
-    </div>
-
+  <div id="header">
+            <nav class="grey lighten-3" role="navigation">
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <a href="index.html" class="black-text brand-logo" id="titleText">Building an Energy Efficient Denver</a>
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a href=""><img src="images/city_energy_logo.png" class="center" width="200px" style="float:right;padding-top: 4px;"></a>
+                            </li>
+                            <li>
+                                <a href="index.html" class="black-text">Map</a>
+                            </li>
+                            <li>
+                                <a href="info.html" class="black-text">About Us</a>
+                            </li>
+                        </ul><!-- Mobile -->
+                        <ul id="nav-mobile" class="side-nav " style="left: -600px;">
+                            <li>
+                                <a href="#"><img src="images/city_energy_logo.png" class="center" width="200px" style="float:right;padding-top: 4px;"></a>
+                            </li>
+                            <li>
+                                <a href="index.html" class="black-text">Map</a>
+                            </li>
+                            <li>
+                                <a href="info.html" class="black-text">About Us</a>
+                            </li>
+                        </ul><a href="#" data-activates="nav-mobile" class="black-text button-collapse"><i class="material-icons">menu</i></a>
+                    </div>
+                </div>
+            </nav>
+            <div id="subtitle">
+                You know the miles per gallon of your car, but do you know the 1-100 ENERGY STAR score of the buildings where you live and work?
+            </div>
+        </div>
+     
     <input id="search-input" type="text" placeholder="Search Box" style="border-radius:2px"/>
       
-    <div id="map-canvas"></div>  
-        
+    <div id="map-canvas"></div>
+          
     <!-- LEGEND ITEM TEMPLATE - This is the HTML for a single legend item -->
     <script id="legend_item" type="x-tmpl-mustache">
       <div onclick="{{onclick}}" class="legendRow">
@@ -52,6 +76,8 @@
     </script>
     <!-- END LEGEND ITEM TEMPLATE -->
     
+    
+    
     <div id="legend" style="border-radius: 2px;"></div>
 
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"
@@ -63,18 +89,12 @@
 
     <script>
       var BASE_URL = "http://foodnextdoor.org/denverenergystars/php/";
-    
-      /**CLUSTER CODE**/ //var markerCluster = new MarkerClusterer(map, markers);   
-            
-      // POP UP BOTTOM DRAWER HALF A SECOND AFTER PAGE LOADS.
-      $(document).ready(function(){
-        setTimeout(function() {
-          $('#popupModal').openModal({opacity: 0});
+
+        $(document).ready(function(){
           $('#close-modal-button').click(function (e) {
             $('#popupModal').closeModal();
           });
-        }, 500);
-
+          $(".button-collapse").sideNav();
       });
     </script>
     
@@ -102,9 +122,11 @@
     
     <!-- BOTTOM DRAWER TEMPLATE - This is the form each building will take -->
     <script id="building_info" type="x-tmpl-mustache">
-      <table style='height:15px;'>
-        <tr>
-          <td style='vertical-align:top;'>
+
+        <div class="row">
+        <div class="col l4">
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
             <h5>{{name}}</h5>
             <h6>{{address}}</h6>
             <br><b>Energy Star Score:</b> {{energyStarScore}}{{^energyStarScore}}No Score{{/energyStarScore}}
@@ -116,16 +138,23 @@
             <br><b>Other Certifications:</b> {{certifications}}{{^certifications}}None{{/certifications}}
             <br><b>Top Energy Efficient Strategies:</b> {{strategies}}{{^strategies}}None{{/strategies}}
             <br><b>Number of Views:</b> {{viewCount}}{{^viewCount}}0{{/viewCount}}
-          </td>
-          <td><img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' /></td>
-        </tr>
-      </table>
+            </div>
+            
+          </div>
+            
+        </div>
+        <div class="col l7">
+            <img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' />    
+        </div>
+      </div>
+
     </script>
     <!-- END BOTTOM DRAWER TEMPLATE -->      
         
     <!-- BOTTOM DRAWER -->
     <div id="popupModal" class="modal bottom-sheet">
-      <i class="material-icons small" id="close-modal-button">close</i>
+
+      <i class="material-icons small right" id="close-modal-button">close</i>
       <div class="modal-content" id="popupModalContent">
         <script>
           $("#popupModalContent").load("html/bottom_drawer_splash.html");
@@ -134,4 +163,5 @@
     </div>
     <!-- END BOTTOM DRAWER -->   
   </body>
+
 </html>

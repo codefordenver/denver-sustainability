@@ -209,6 +209,20 @@ a.info:hover span
     width:10%;
   }
 }
+@media screen and (max-width: 470px){
+    #search-input{
+        width: 200px;
+    }
+    #titleText{
+      font-size: 20px !important;  
+    }
+}
+@media screen and (max-width: 520px){
+    
+    #titleText{
+        margin-left: -45px;
+    }
+}
 
 #titleBar{
   background-color: #EAEAEA;
@@ -241,7 +255,7 @@ a.info:hover span
     font-size:12px;
   }
   div#popupModalContent.modal-content{
-    max-height:2px !important;
+    max-height:160px !important;
   }
   #legend {
     max-height: 248px;
