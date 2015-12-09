@@ -74,13 +74,14 @@ html, body, #map-canvas {
 }
 
 #legend::after {      
-  content:  "* Buildings less than 50,000 square feet are denoted by small icons.";   
+  content:  "Help Us Fill The Map!";  
+  font-size: 14px;
+  color: #73BAE8;
   float: left;    
   display:block;    
-  max-width: 135px;   
+  max-width: 170px; 
   display: block;   
   padding: 15px;    
-  text-align: justify;    
 }
 
 .legendRow {
