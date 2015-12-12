@@ -110,6 +110,8 @@ function parseBuildings(buildingStr, map) {
     // END PARSING CODE
     var x = (((e + gr) / (e + grey + gr))*100);
     var y = document.getElementById("progressBarValue");
+    var p = document.getElementById("percentOfBuilding");
+    p.innerHTML = x.toFixed(1);
     y.style.width = x + "%";
 }
 

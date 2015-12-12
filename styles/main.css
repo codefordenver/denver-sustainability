@@ -74,21 +74,22 @@ html, body, #map-canvas {
   cursor:pointer;
 }
 
-#legend::after {      
+
+#legendText {      
   content:  "Help Us Fill The Map!";  
   font-size: 14px;
   color: #73BAE8;
-  float: left;    
-  display:block;    
-  max-width: 170px; 
-  display: block;   
-  padding: 15px;       
+  margin-left: -7px;  
+  max-width: 180px;       
+}
+#LegendContent{
+ margin-left: -7px;
+    max-width: 180px; 
 }
 #progressBar{
-    position: absolute;
-    width: 150px;
-    margin-left: 10px;
-    bottom: 0;
+    width: 130px;
+    margin-left: 9px;
+   
 }
 
 
@@ -269,10 +270,13 @@ a.info:hover span
   #legend {
     max-height: 248px;
   }
-  #legend::after {
+  #legendText {
     display: none;
   }
   #progressBar{
     display: none;
   }
+    #LegendContent{
+        display: none;
+    }
 }
