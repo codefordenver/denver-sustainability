@@ -3,7 +3,9 @@ grayBuildings = [];
 greenBuildings = [];
 function parseBuildings(buildingStr, map) {    
     /** CLUSTER CODE **/ // markers = new Array();     
-                
+    var e = 0; 
+    var gr = 0;
+    var grey = 0;
     // PARSING CODE
     currentPrefix = '*****';
     strIndex = 0;
@@ -23,19 +25,24 @@ function parseBuildings(buildingStr, map) {
           continue;  // we don't need to show buildings of this type anymore
         } else if (typeCode == 1){
           nextIcon = 'images/icon-circle-greenx7.png';
+          gr = gr + 1;
           tempList = greenBuildings;
         } else if (typeCode == 2){
           nextIcon = 'images/icon-small-blue-square7x7.png';
           tempList = energyStarBuildings;
+          e = e + 1;  
         } else if (typeCode == 4){
           nextIcon = 'images/icon-circle-grayx20.png';
           tempList = grayBuildings;
+          grey = grey + 1;
         } else if (typeCode == 5){
           nextIcon = 'images/icon-circle-greenx20.png';
           tempList = greenBuildings;
+          gr = gr + 1;
         } else {
           nextIcon = 'images/energy_star_logo_small.png';
           tempList = energyStarBuildings;
+          e = e + 1;
         }
         // END ICON RULES
 
@@ -101,8 +108,13 @@ function parseBuildings(buildingStr, map) {
         // END APPLY TO EACH HASH	
     }
     // END PARSING CODE
+    var x = (((e + gr) / (e + grey + gr))*100);
+    var y = document.getElementById("progressBarValue");
+    y.style.width = x + "%";
 }
-    
+
+
+
 function plotBuildings(map) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", BASE_URL + "getGeohashedBuildings.php", true);
