@@ -67,7 +67,8 @@ html, body, #map-canvas {
   background-color: #000;   
   color:white;    
   opacity:0.9;    
-  border-radius:15px;   
+  border-radius:15px;
+  
 }
 #legendItem0, #legendItem1, #legendItem2, #legendItem3 {
   cursor:pointer;
@@ -82,8 +83,14 @@ html, body, #map-canvas {
   max-width: 170px; 
   display: block;   
   padding: 15px;    
-     
+    
 }
+#progressBar{
+    position: absolute;
+    margin-top: 10px;
+    bottom: 0;
+}
+
 
 .legendRow {
   padding-right: 5px;
