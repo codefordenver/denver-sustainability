@@ -86,7 +86,8 @@ html, body, #map-canvas {
 }
 #progressBar{
     position: absolute;
-    margin-top: 10px;
+    width: 150px;
+    margin-left: 10px;
     bottom: 0;
 }
 
