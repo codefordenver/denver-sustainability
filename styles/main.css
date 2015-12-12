@@ -233,6 +233,18 @@ a.info:hover span
         margin-left: -45px;
     }
 }
+@media screen and (max-height: 645px){
+    
+    #legendText {
+    display: none;
+  }
+  #progressBar{
+    display: none;
+  }
+    #LegendContent{
+        display: none;
+    }
+}
 
 #titleBar{
   background-color: #EAEAEA;
