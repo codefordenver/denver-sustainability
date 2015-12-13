@@ -141,8 +141,6 @@
             <div class="card-content white-text">
             <h5>{{name}}</h5>
             <h6>{{address}}</h6>
-            <br><b>Energy Star Score:</b> {{energyStarScore}}{{^energyStarScore}}No Score{{/energyStarScore}}
-            <br><b>Energy Use Intensity (kbtu/sq ft):</b> {{energyUseIntensity}}{{^energyUseIntensity}}Unknown{{/energyUseIntensity}}
             <br><b>Property Type:</b> {{sector}}{{^sector}}Unknown{{/sector}}
             <br><b>Gross Square Footage:</b> {{squareFootage}}{{^squareFootage}}Unknown{{/squareFootage}}
             <br><b>Year Built:</b> {{yearBuilt}}
@@ -155,8 +153,22 @@
           </div>
             
         </div>
-        <div class="col l7">
+        <div class="col l4">
             <img src='https://maps.googleapis.com/maps/api/streetview?size=400x400&location={{lat}},{{lng}}' />    
+        </div>
+        <div class="col l4">
+             <div class="card blue-grey darken-1">
+             <div class="card-content white-text">   
+                <b>Energy Star Score:</b> {{energyStarScore}}{{^energyStarScore}}No Score{{/energyStarScore}}
+                <div class="progress">
+                    <br><div class="determinate" style="width: {{energyStarScore}}%"></div>
+                </div>
+                <br><b>Energy Use Intensity (kbtu/sq ft):</b> {{energyUseIntensity}}{{^energyUseIntensity}}Unknown{{/energyUseIntensity}}
+                <div class="progress">
+                    <br><div class="determinate" style="width: {{energyUseIntensity}}%"></div>
+                </div>
+            </div> 
+            </div>
         </div>
       </div>
 
