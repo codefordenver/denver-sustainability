@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/codefordenver/denver-sustainability.png?label=ready&title=Ready)](https://waffle.io/codefordenver/denver-sustainability)
 ###Building a Sustainable Denver
 
 ######A php/MySQL project that displays buildings on a map and color codes them based on their level of commitment to sustainability.
