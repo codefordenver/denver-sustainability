@@ -29,6 +29,7 @@ path | description
 ---- | -----------
 index.html | Has the map view. Here users can see the map and get stats on buildings in Denver.  Some stuff is broken out into the html and js folders
 info.html | Has the about us information.
+simpHTTP.py | Use this script as a local server to host the website while you are working on new contributions. 
 backup_database/ | Dump of the mysql database
 html/ | Some of the page content (sometimes using Mustache templates).  For example, bottom_drawer_splash.html is the splash screen that appears in the bottom drawer when you first open the page.
 images/ | The marker images, header images, certification badges, etc.
