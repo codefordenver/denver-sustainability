@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Building an Energy Efficient Denver</title>
+    <head>
+        <title>Building an Energy Efficient Denver</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        
+        <link type="text/css" rel="stylesheet" href="styles/main.css" />
+        <link type="text/css" rel="stylesheet" href="styles/lib/materialize.min.css"  media="screen,projection"/>
+        
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/lib/materialize.min.js"></script>
+        <script type="text/javascript" src="js/lib/mustache.min.js"></script>
+        <!--CLUSTER CODE <script type="text/javascript" src="js/markerclusterer.min.js"></script>-->
+        <script type="text/javascript" src="js/lib/geohash.js"></script>
+    </head>
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  
-    <link type="text/css" rel="stylesheet" href="styles/main.css" />
-    <link type="text/css" rel="stylesheet" href="styles/lib/materialize.min.css"  media="screen,projection"/>
- 
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-         
-    <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/lib/materialize.min.js"></script>
-    <script type="text/javascript" src="js/lib/mustache.min.js"></script>
-    <!--CLUSTER CODE <script type="text/javascript" src="js/markerclusterer.min.js"></script>-->
-    <script type="text/javascript" src="js/lib/geohash.js"></script>
-  </head>
-  
-  <body>
-    <script type="text/javascript" src="js/facebookInit.js"></script>
-    
-  <div id="header">
+    <body>
+        <script type="text/javascript" src="js/facebookInit.js"></script>
+        
+        <div id="header">
             <nav class="grey lighten-3" role="navigation">
                 <div class="nav-wrapper">
                     <div class="row">
@@ -41,40 +41,45 @@
                             <li>
                                 <a href="faq.html" class="black-text">Frequently Asked Questions</a>
                             </li>
-                        </ul><!-- Mobile -->
-                        <ul id="nav-mobile" class="side-nav " style="left: -600px;">
-                            <li>
-                                <a href="#"><img src="images/city_energy_logo.png" class="center" width="200px" style="float:right;padding-top: 4px;"></a>
-                            </li>
-                            <li>
-                                <a href="index.html" class="black-text">Map</a>
-                            </li>
-                            <li>
-                                <a href="info.html" class="black-text">About Us</a>
-                            </li>
-                            <li>
-                                <a href="faq.html" class="black-text">Frequently Asked Questions</a>
-                            </li>
-                        </ul><a href="#" data-activates="nav-mobile" class="black-text button-collapse"><i class="material-icons">menu</i></a>
+                            </ul><!-- Mobile -->
+                            <ul id="nav-mobile" class="side-nav " style="left: -600px;">
+                                <li>
+                                    <a href="#"><img src="images/city_energy_logo.png" class="center" width="200px" style="float:right;padding-top: 4px;"></a>
+                                </li>
+                                <li>
+                                    <a href="index.html" class="black-text">Map</a>
+                                </li>
+                                <li>
+                                    <a href="info.html" class="black-text">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="faq.html" class="black-text">Frequently Asked Questions</a>
+                                </li>
+                                </ul><a href="#" data-activates="nav-mobile" class="black-text button-collapse"><i class="material-icons">menu</i></a>
+                            </div>
+                        </div>
+                    </nav>
+                    <div id="subtitle">
+                        You know the miles per gallon of your car, but do you know the 1-100 ENERGY STAR score of the buildings where you live and work?
                     </div>
                 </div>
-            </nav>
-            <div id="subtitle">
-                You know the miles per gallon of your car, but do you know the 1-100 ENERGY STAR score of the buildings where you live and work?
-            </div>
-        </div>
-     
-    
-      
-     
-        
-    
-     <script>
-        $(document).ready(function(){
-          $(".button-collapse").sideNav();
-      });
-    </script> 
-      
-  </body>
-
-</html>
+                <h1 class="header center">FAQ</h1>
+                <div class="container">
+                    <h5>How do I add to the map?</h5>
+                    <p class="light">In order to add to the map you can submit your information on the add to the map page.</p>
+                    <hr>
+                    <h5>What is this all about?</h5>
+                    <p class="light">This project looks to map the energy efficiency of the commercial buildings in denver that are over 5,000 square feet. If you would like to learn more please check out our <a href="info.html">about us</a> page.</p>
+                    <hr>
+                    <h5>Placeholder Question Here</h5>
+                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <script>
+                    $(document).ready(function(){
+                        $(".button-collapse").sideNav();
+                    });
+                </script>
+                
+            </body>
+        </html>

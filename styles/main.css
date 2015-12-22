@@ -111,7 +111,8 @@ html, body, #map-canvas {
 	vertical-align: middle;
 }
 
-.container {
+/*Don't know why we have custom styles for the container div*/
+/*.container {
   float:  right;
   border-radius: 10px;
   background-color: black;
@@ -124,7 +125,7 @@ html, body, #map-canvas {
   color: #fff;
   line-height: 8px;
   opacity: .8;
-}
+}*/
 
 h2 {
   font-size: 24px;
