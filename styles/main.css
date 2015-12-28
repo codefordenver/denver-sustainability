@@ -100,7 +100,7 @@ html, body, #map-canvas {
 
 .legendRow:hover {
   background-color: #666666;
-  border-radius:15px; 
+  border-radius:2px; 
 }
  
 #legend h3 {
