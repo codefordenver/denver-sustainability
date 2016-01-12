@@ -22,6 +22,7 @@ function initMap() {
 
     var mapElement = document.getElementById('map-canvas');
     map = new google.maps.Map(mapElement, mapOptions);
+    setTimeout(1000);
     google.maps.event.addListener(map, 'click', function() { $("#popupModal").closeModal(c); });
     
     initSearchBox(map);
