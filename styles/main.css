@@ -5,6 +5,9 @@ html, body, #map-canvas {
 }
 
 /* Close button by Jake Billings jake@jakebillings.com 11/30/2015 */
+#popupModal {
+  background-color:  rgba(240, 240, 240, .8);
+}
 #close-modal-button {
   margin-right: 5px;
   margin-top: 5px;
